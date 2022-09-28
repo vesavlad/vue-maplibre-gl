@@ -1,9 +1,9 @@
 var ue = Object.defineProperty;
 var ce = (e, t, o) => t in e ? ue(e, t, { enumerable: !0, configurable: !0, writable: !0, value: o }) : e[t] = o;
 var S = (e, t, o) => (ce(e, typeof t != "symbol" ? t + "" : t, o), o);
-import { reactive as te, watch as h, defineComponent as f, markRaw as oe, getCurrentInstance as A, shallowRef as X, ref as E, provide as v, onMounted as de, unref as J, onBeforeUnmount as w, h as R, inject as n, createCommentVNode as p, Teleport as ne, nextTick as me, warn as T, renderSlot as Q, createTextVNode as ae, isRef as he } from "vue";
-import { Map as ge, AttributionControl as fe, FullscreenControl as ye, GeolocateControl as ve, NavigationControl as pe, ScaleControl as be, Marker as Se } from "maplibre-gl";
-const y = Symbol("map"), b = Symbol("isLoaded"), M = Symbol("componentId"), L = Symbol("sourceId"), x = Symbol("sourceLayerRegistry"), _ = Symbol("emitter"), m = te({
+import { reactive as te, watch as h, defineComponent as y, markRaw as oe, getCurrentInstance as A, shallowRef as X, ref as E, provide as v, onMounted as de, unref as J, onBeforeUnmount as w, h as R, inject as n, createCommentVNode as p, Teleport as ne, nextTick as me, warn as T, renderSlot as Q, createTextVNode as ae, isRef as he } from "vue";
+import { Map as ge, AttributionControl as ye, FullscreenControl as fe, GeolocateControl as ve, NavigationControl as pe, ScaleControl as be, Marker as Se } from "maplibre-gl";
+const f = Symbol("map"), b = Symbol("isLoaded"), M = Symbol("componentId"), L = Symbol("sourceId"), x = Symbol("sourceLayerRegistry"), _ = Symbol("emitter"), m = te({
   style: "https://demotiles.maplibre.org/style.json",
   center: Object.freeze([0, 0]),
   zoom: 1,
@@ -120,9 +120,13 @@ S(I, "MAP_OPTION_KEYS", [
 var H = /* @__PURE__ */ ((e) => (e.TOP_LEFT = "top-left", e.TOP_RIGHT = "top-right", e.BOTTOM_LEFT = "bottom-left", e.BOTTOM_RIGHT = "bottom-right", e))(H || {});
 const N = Object.values(H);
 function j(e, t, o) {
-  h(e, (a) => {
-    a && N.indexOf(a) === -1 || (t.value.hasControl(o) && t.value.removeControl(o), t.value.addControl(o, a));
-  }, { immediate: !0 });
+  h(
+    e,
+    (a) => {
+      a && N.indexOf(a) === -1 || (t.value.hasControl(o) && t.value.removeControl(o), t.value.addControl(o, a));
+    },
+    { immediate: !0 }
+  );
 }
 function Me(e) {
   return { all: e = e || /* @__PURE__ */ new Map(), on: function(t, o) {
@@ -162,7 +166,7 @@ function Oe(e, t = 250, o = !1) {
     clearTimeout(a);
   }, r;
 }
-const xe = f({
+const xe = y({
   name: "MglMap",
   props: {
     width: { type: [Number, String], default: "100%" },
@@ -266,51 +270,96 @@ const xe = f({
   setup(e, t) {
     const o = oe(A()), a = X(null), r = X(null), i = X(null), l = E(!1), d = E(!1), u = /* @__PURE__ */ new Map(), g = Me(), P = Le(o, e.mapKey);
     let Z;
-    return v(y, i), v(b, d), v(M, o.uid), v(L, ""), v(_, g), h(() => e.bearing, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setBearing(c));
-    }), h(() => e.bounds, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.fitBounds(c, e.fitBoundsOptions));
-    }), h(() => e.center, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setCenter(c));
-    }), h(() => e.maxBounds, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setMaxBounds(c));
-    }), h(() => e.maxPitch, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setMaxPitch(c));
-    }), h(() => e.maxZoom, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setMaxZoom(c));
-    }), h(() => e.minPitch, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setMinPitch(c));
-    }), h(() => e.minZoom, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setMinZoom(c));
-    }), h(() => e.pitch, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setPitch(c));
-    }), h(() => e.renderWorldCopies, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setRenderWorldCopies(c));
-    }), h(() => e.mapStyle, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setStyle(c));
-    }), h(() => e.transformRequest, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setTransformRequest(c));
-    }), h(() => e.zoom, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setZoom(c));
-    }), h(() => e.zoom, (c) => {
-      var s;
-      c && ((s = i.value) == null || s.setZoom(c));
-    }), de(() => {
+    return v(f, i), v(b, d), v(M, o.uid), v(L, ""), v(_, g), h(
+      () => e.bearing,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setBearing(c));
+      }
+    ), h(
+      () => e.bounds,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.fitBounds(c, e.fitBoundsOptions));
+      }
+    ), h(
+      () => e.center,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setCenter(c));
+      }
+    ), h(
+      () => e.maxBounds,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setMaxBounds(c));
+      }
+    ), h(
+      () => e.maxPitch,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setMaxPitch(c));
+      }
+    ), h(
+      () => e.maxZoom,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setMaxZoom(c));
+      }
+    ), h(
+      () => e.minPitch,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setMinPitch(c));
+      }
+    ), h(
+      () => e.minZoom,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setMinZoom(c));
+      }
+    ), h(
+      () => e.pitch,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setPitch(c));
+      }
+    ), h(
+      () => e.renderWorldCopies,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setRenderWorldCopies(c));
+      }
+    ), h(
+      () => e.mapStyle,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setStyle(c));
+      }
+    ), h(
+      () => e.transformRequest,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setTransformRequest(c));
+      }
+    ), h(
+      () => e.zoom,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setZoom(c));
+      }
+    ), h(
+      () => e.zoom,
+      (c) => {
+        var s;
+        c && ((s = i.value) == null || s.setZoom(c));
+      }
+    ), de(() => {
       P.isMounted = !0;
-      const c = Object.keys(e).filter((s) => e[s] !== void 0 && I.MAP_OPTION_KEYS.indexOf(s) !== -1).reduce((s, O) => (s[O === "mapStyle" ? "style" : O] = J(e[O]), s), { container: r.value });
+      const c = Object.keys(e).filter((s) => e[s] !== void 0 && I.MAP_OPTION_KEYS.indexOf(s) !== -1).reduce(
+        (s, O) => (s[O === "mapStyle" ? "style" : O] = J(e[O]), s),
+        { container: r.value }
+      );
       if (i.value = oe(new ge(c)), P.map = i.value, l.value = !0, u.set("__load", () => (d.value = !0, P.isLoaded = !0)), i.value.on("load", u.get("__load")), o.vnode.props) {
         for (let s = 0, O = I.MAP_EVENT_TYPES.length; s < O; s++)
           if (o.vnode.props["onMap:" + I.MAP_EVENT_TYPES[s]]) {
@@ -339,13 +388,10 @@ const xe = f({
         class: "mgl-container",
         style: { height: this.$props.height, width: this.$props.width }
       },
-      [
-        R("div", { ref: "container", class: "mgl-wrapper" }),
-        this.isInitialized && this.$slots.default ? this.$slots.default() : void 0
-      ]
+      [R("div", { ref: "container", class: "mgl-wrapper" }), this.isInitialized && this.$slots.default ? this.$slots.default() : void 0]
     );
   }
-}), Ce = f({
+}), Ce = y({
   name: "MglAttributionControl",
   props: {
     position: {
@@ -356,7 +402,7 @@ const xe = f({
     customAttribution: [String, Array]
   },
   setup(e) {
-    const t = n(y), o = new fe({ compact: e.compact, customAttribution: e.customAttribution });
+    const t = n(f), o = new ye({ compact: e.compact, customAttribution: e.customAttribution });
     j(() => e.position, t, o), w(() => t.value.removeControl(o));
   },
   render() {
@@ -381,7 +427,7 @@ const xe = f({
 };
 let q = D;
 S(q, "CONTROL_CLASS", "maplibregl-ctrl"), S(q, "CONTROL_GROUP_CLASS", "maplibregl-ctrl-group");
-const we = f({
+const we = y({
   name: "MglCustomControl",
   props: {
     position: {
@@ -394,19 +440,18 @@ const we = f({
     }
   },
   setup(e) {
-    const t = n(y), o = E(!1), a = new q(o, e.noClasses);
-    return j(() => e.position, t, a), h(() => e.noClasses, (r) => a.setClasses(r)), w(() => {
+    const t = n(f), o = E(!1), a = new q(o, e.noClasses);
+    return j(() => e.position, t, a), h(
+      () => e.noClasses,
+      (r) => a.setClasses(r)
+    ), w(() => {
       t.value.removeControl(a);
     }), { isAdded: o, container: a.container };
   },
   render() {
-    return this.isAdded ? R(
-      ne,
-      { to: this.container },
-      this.$slots.default ? this.$slots.default() : void 0
-    ) : p("custom-component");
+    return this.isAdded ? R(ne, { to: this.container }, this.$slots.default ? this.$slots.default() : void 0) : p("custom-component");
   }
-}), Re = f({
+}), Re = y({
   name: "MglFullscreenControl",
   props: {
     position: {
@@ -420,7 +465,7 @@ const we = f({
     }
   },
   setup(e) {
-    const t = n(y), o = new ye(e.container ? { container: e.container } : void 0);
+    const t = n(f), o = new fe(e.container ? { container: e.container } : void 0);
     j(() => e.position, t, o), w(() => t.value.removeControl(o));
   },
   render() {
@@ -479,20 +524,10 @@ class Ie {
       this.graphTop,
       this.graphWidth - r,
       this.graphHeight
-    ), o.fillRect(
-      this.graphRight + this.graphWidth - r,
-      this.graphTop,
-      r,
-      this.graphHeight
-    ), o.fillStyle = this.background, o.globalAlpha = 0.75, o.fillRect(
-      this.graphRight + this.graphWidth - r,
-      this.graphTop,
-      r,
-      (1 - t / 100) * this.graphHeight
-    );
+    ), o.fillRect(this.graphRight + this.graphWidth - r, this.graphTop, r, this.graphHeight), o.fillStyle = this.background, o.globalAlpha = 0.75, o.fillRect(this.graphRight + this.graphWidth - r, this.graphTop, r, (1 - t / 100) * this.graphHeight);
   }
 }
-const Te = f({
+const Te = y({
   name: "MglFrameRateControl",
   props: {
     position: {
@@ -537,7 +572,7 @@ const Te = f({
     }
   },
   setup(e) {
-    const t = n(y), o = new Ie(
+    const t = n(f), o = new Ie(
       e.background,
       e.barWidth,
       e.color,
@@ -552,7 +587,7 @@ const Te = f({
   },
   render() {
   }
-}), Pe = f({
+}), Pe = y({
   name: "MglGeolocationControl",
   props: {
     position: {
@@ -582,7 +617,7 @@ const Te = f({
     }
   },
   setup(e) {
-    const t = n(y), o = new ve({
+    const t = n(f), o = new ve({
       positionOptions: e.positionOptions,
       fitBoundsOptions: e.fitBoundsOptions,
       trackUserLocation: e.trackUserLocation,
@@ -593,7 +628,7 @@ const Te = f({
   },
   render() {
   }
-}), Ae = f({
+}), Ae = y({
   name: "MglNavigationControl",
   props: {
     position: {
@@ -606,14 +641,14 @@ const Te = f({
     visualizePitch: Boolean
   },
   setup(e) {
-    const t = n(y), o = new pe({ showCompass: e.showCompass, showZoom: e.showZoom, visualizePitch: e.visualizePitch });
+    const t = n(f), o = new pe({ showCompass: e.showCompass, showZoom: e.showZoom, visualizePitch: e.visualizePitch });
     j(() => e.position, t, o), w(() => t.value.removeControl(o));
   },
   render() {
   }
 });
 var le = /* @__PURE__ */ ((e) => (e.IMPERIAL = "imperial", e.METRIC = "metric", e.NAUTICAL = "nautical", e))(le || {});
-const _e = Object.values(le), Ne = f({
+const _e = Object.values(le), Ne = y({
   name: "MglScaleControl",
   props: {
     position: {
@@ -628,7 +663,7 @@ const _e = Object.values(le), Ne = f({
     }
   },
   setup(e) {
-    const t = n(y), o = new be({ maxWidth: e.maxWidth, unit: e.unit });
+    const t = n(f), o = new be({ maxWidth: e.maxWidth, unit: e.unit });
     j(() => e.position, t, o), w(() => t.value.removeControl(o));
   },
   render() {
@@ -649,7 +684,7 @@ const ze = Object.values(K), U = {
     size: 0,
     viewbox: "0 0 0 0"
   }
-}, ee = f({
+}, ee = y({
   name: "MglButton",
   props: {
     type: {
@@ -666,32 +701,31 @@ const ze = Object.values(K), U = {
   setup(e) {
     !e.path && e.type !== "text" && T("property `path` must be set on MaplibreButton");
     const t = E(U[e.type] || U.default);
-    return h(() => e.type, (o) => t.value = U[o] || U.default), { defaults: t };
+    return h(
+      () => e.type,
+      (o) => t.value = U[o] || U.default
+    ), { defaults: t };
   },
   render() {
-    return this.type === "text" ? R("button", { type: "button" }, this.$slots.default ? this.$slots.default() : void 0) : R(
-      "button",
-      { type: "button", class: "maplibregl-ctrl-icon" },
-      [
-        R(
-          "svg",
-          {
-            width: this.size || this.defaults.size,
-            height: this.size || this.defaults.size,
-            viewBox: this.viewbox || this.defaults.viewbox
-          },
-          R("path", { fill: "currentColor", d: this.path })
-        ),
-        this.$slots.default ? this.$slots.default() : void 0
-      ]
-    );
+    return this.type === "text" ? R("button", { type: "button" }, this.$slots.default ? this.$slots.default() : void 0) : R("button", { type: "button", class: "maplibregl-ctrl-icon" }, [
+      R(
+        "svg",
+        {
+          width: this.size || this.defaults.size,
+          height: this.size || this.defaults.size,
+          viewBox: this.viewbox || this.defaults.viewbox
+        },
+        R("path", { fill: "currentColor", d: this.path })
+      ),
+      this.$slots.default ? this.$slots.default() : void 0
+    ]);
   }
 });
 var ke = "M12,18.54L19.37,12.8L21,14.07L12,21.07L3,14.07L4.62,12.81L12,18.54M12,16L3,9L12,2L21,9L12,16M12,4.53L6.26,9L12,13.47L17.74,9L12,4.53Z";
 function re(e) {
   return e && !!e.stopPropagation;
 }
-const Be = f({
+const Be = y({
   name: "MglStyleSwitchControl",
   props: {
     position: {
@@ -713,7 +747,7 @@ const Be = f({
   },
   emits: ["update:modelValue", "update:isOpen"],
   setup(e, t) {
-    const o = n(y), a = n(b), r = n(_), i = E(!1), l = E(e.isOpen === void 0 ? !1 : e.isOpen), d = E(e.modelValue === void 0 ? e.mapStyles.length ? e.mapStyles[0] : null : e.modelValue), u = new q(i, !1), g = c.bind(null, !1);
+    const o = n(f), a = n(b), r = n(_), i = E(!1), l = E(e.isOpen === void 0 ? !1 : e.isOpen), d = E(e.modelValue === void 0 ? e.mapStyles.length ? e.mapStyles[0] : null : e.modelValue), u = new q(i, !1), g = c.bind(null, !1);
     function P() {
       const s = o.value.getStyle().name;
       for (let O = 0, G = e.mapStyles.length; O < G; O++)
@@ -722,13 +756,23 @@ const Be = f({
           break;
         }
     }
-    h(a, (s) => {
-      s && P();
-    }, { immediate: !0 }), o.value.on("style.load", P), document.addEventListener("click", g), j(() => e.position, o, u), e.modelValue !== void 0 && h(() => e.modelValue, (s) => {
-      s !== void 0 && (d.value = s);
-    }), e.isOpen !== void 0 && h(() => e.isOpen, (s) => {
-      s !== void 0 && (l.value = s);
-    }), w(() => {
+    h(
+      a,
+      (s) => {
+        s && P();
+      },
+      { immediate: !0 }
+    ), o.value.on("style.load", P), document.addEventListener("click", g), j(() => e.position, o, u), e.modelValue !== void 0 && h(
+      () => e.modelValue,
+      (s) => {
+        s !== void 0 && (d.value = s);
+      }
+    ), e.isOpen !== void 0 && h(
+      () => e.isOpen,
+      (s) => {
+        s !== void 0 && (l.value = s);
+      }
+    ), w(() => {
       o.value.removeControl(u), o.value.off("style.load", P), document.removeEventListener("click", g);
     });
     function Z(s) {
@@ -772,35 +816,45 @@ const Be = f({
       ne,
       { to: this.container },
       Q(this.$slots, "default", e, () => [
-        Q(this.$slots, "button", e, () => [R(ee, {
-          type: K.MDI,
-          path: ke,
-          class: ["maplibregl-ctrl-icon maplibregl-style-switch", this.intIsOpen ? "is-open" : ""],
-          onClick: this.toggleOpen.bind(null, !0)
-        })]),
+        Q(this.$slots, "button", e, () => [
+          R(ee, {
+            type: K.MDI,
+            path: ke,
+            class: ["maplibregl-ctrl-icon maplibregl-style-switch", this.intIsOpen ? "is-open" : ""],
+            onClick: this.toggleOpen.bind(null, !0)
+          })
+        ]),
         Q(this.$slots, "styleList", e, () => [
           R(
             "div",
             { class: ["maplibregl-style-list", this.intIsOpen ? "is-open" : ""] },
             this.mapStyles.map((t) => {
               var o, a;
-              return t.icon ? R(ee, {
-                type: K.MDI,
-                path: t.icon.path,
-                class: ((o = this.intModelValue) == null ? void 0 : o.name) === t.name ? "is-active" : "",
-                onClick: () => this.setStyle(t)
-              }, ae(t.label)) : R("button", {
-                type: "button",
-                class: ((a = this.intModelValue) == null ? void 0 : a.name) === t.name ? "is-active" : "",
-                onClick: () => this.setStyle(t)
-              }, ae(t.label));
+              return t.icon ? R(
+                ee,
+                {
+                  type: K.MDI,
+                  path: t.icon.path,
+                  class: ((o = this.intModelValue) == null ? void 0 : o.name) === t.name ? "is-active" : "",
+                  onClick: () => this.setStyle(t)
+                },
+                ae(t.label)
+              ) : R(
+                "button",
+                {
+                  type: "button",
+                  class: ((a = this.intModelValue) == null ? void 0 : a.name) === t.name ? "is-active" : "",
+                  onClick: () => this.setStyle(t)
+                },
+                ae(t.label)
+              );
             })
           )
         ])
       ])
     );
   }
-}), Ee = f({
+}), Ee = y({
   name: "MglMarker",
   props: {
     coordinates: {
@@ -817,14 +871,29 @@ const Be = f({
     scale: Number
   },
   setup(e) {
-    const t = n(y), o = Object.keys(e).filter((r) => e[r] !== void 0 && I.MARKER_OPTION_KEYS.indexOf(r) !== -1).reduce((r, i) => (r[i] = J(e[i]), r), {}), a = new Se(o);
-    return a.setLngLat(e.coordinates).addTo(t.value), h(() => e.coordinates, (r) => a.setLngLat(r)), h(() => e.offset, (r) => a.setOffset(r || [0, 0])), h(() => e.pitchAlignment, (r) => a.setPitchAlignment(r || "auto")), h(() => e.rotationAlignment, (r) => a.setRotationAlignment(r || "auto")), w(a.remove.bind(a)), { marker: a };
+    const t = n(f), o = Object.keys(e).filter((r) => e[r] !== void 0 && I.MARKER_OPTION_KEYS.indexOf(r) !== -1).reduce((r, i) => (r[i] = J(e[i]), r), {}), a = new Se(o);
+    return a.setLngLat(e.coordinates).addTo(t.value), h(
+      () => e.coordinates,
+      (r) => a.setLngLat(r)
+    ), h(
+      () => e.offset,
+      (r) => a.setOffset(r || [0, 0])
+    ), h(
+      () => e.pitchAlignment,
+      (r) => a.setPitchAlignment(r || "auto")
+    ), h(
+      () => e.rotationAlignment,
+      (r) => a.setRotationAlignment(r || "auto")
+    ), w(a.remove.bind(a)), { marker: a };
   },
   render() {
   }
 });
 function He(e, t, o) {
-  return Object.keys(t).filter((a) => t[a] !== void 0 && o.indexOf(a) !== -1).reduce((a, r) => (a[r] = J(t[r]), a), { type: e });
+  return Object.keys(t).filter((a) => t[a] !== void 0 && o.indexOf(a) !== -1).reduce(
+    (a, r) => (a[r] = J(t[r]), a),
+    { type: e }
+  );
 }
 const ie = /* @__PURE__ */ new Map();
 function C(e, t) {
@@ -857,7 +926,7 @@ class W {
     this.unmountHandlers.forEach((t) => t());
   }
 }
-const je = ["animate", "coordinates", "canvas"], Fe = f({
+const je = ["animate", "coordinates", "canvas"], Fe = y({
   name: "MglCanvasSource",
   props: {
     sourceId: {
@@ -869,17 +938,17 @@ const je = ["animate", "coordinates", "canvas"], Fe = f({
     canvas: [HTMLCanvasElement, String]
   },
   setup(e) {
-    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
-    return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "canvas", je, l), h(() => e.coordinates, (d) => {
-      var u;
-      return (u = i.value) == null ? void 0 : u.setCoordinates(d || []);
-    }), { source: i };
+    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "canvas", je, l), h(
+      () => e.coordinates,
+      (d) => {
+        var u;
+        return (u = i.value) == null ? void 0 : u.setCoordinates(d || []);
+      }
+    ), { source: i };
   },
   render() {
-    return [
-      p("Canvas Source"),
-      this.source && this.$slots.default ? this.$slots.default() : void 0
-    ];
+    return [p("Canvas Source"), this.source && this.$slots.default ? this.$slots.default() : void 0];
   }
 }), Ve = [
   "data",
@@ -896,7 +965,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = f({
   "generateId",
   "promoteId",
   "filter"
-], Ze = f({
+], Ze = y({
   name: "MglGeoJsonSource",
   props: {
     sourceId: {
@@ -919,19 +988,16 @@ const je = ["animate", "coordinates", "canvas"], Fe = f({
     filter: [Array, String, Object]
   },
   setup(e) {
-    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
     return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "geojson", Ve, l), h(he(e.data) ? e.data : () => e.data, (d) => {
       var u;
       return (u = i.value) == null ? void 0 : u.setData(d || { type: "FeatureCollection", features: [] });
     }), { source: i };
   },
   render() {
-    return [
-      p("GeoJSON Source"),
-      this.source && this.$slots.default ? this.$slots.default() : void 0
-    ];
+    return [p("GeoJSON Source"), this.source && this.$slots.default ? this.$slots.default() : void 0];
   }
-}), $e = ["url", "coordinates"], We = f({
+}), $e = ["url", "coordinates"], We = y({
   name: "MglImageSource",
   props: {
     sourceId: {
@@ -942,19 +1008,19 @@ const je = ["animate", "coordinates", "canvas"], Fe = f({
     coordinates: Array
   },
   setup(e) {
-    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
-    return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "image", $e, l), h(() => e.coordinates, (d) => {
-      var u;
-      return (u = i.value) == null ? void 0 : u.setCoordinates(d || []);
-    }), { source: i };
+    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "image", $e, l), h(
+      () => e.coordinates,
+      (d) => {
+        var u;
+        return (u = i.value) == null ? void 0 : u.setCoordinates(d || []);
+      }
+    ), { source: i };
   },
   render() {
-    return [
-      p("Image Source"),
-      this.source && this.$slots.default ? this.$slots.default() : void 0
-    ];
+    return [p("Image Source"), this.source && this.$slots.default ? this.$slots.default() : void 0];
   }
-}), qe = ["url", "tiles", "bounds", "minzoom", "maxzoom", "tileSize", "scheme", "attribution"], De = f({
+}), qe = ["url", "tiles", "bounds", "minzoom", "maxzoom", "tileSize", "scheme", "attribution"], De = y({
   name: "MglRasterSource",
   props: {
     sourceId: {
@@ -971,13 +1037,13 @@ const je = ["animate", "coordinates", "canvas"], Fe = f({
     attribution: String
   },
   setup(e) {
-    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
     return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "raster", qe, l), { source: i };
   },
   render() {
     return p("Video Source");
   }
-}), Ge = ["url", "tiles", "bounds", "minzoom", "maxzoom", "tileSize", "attribution", "encoding"], Ue = f({
+}), Ge = ["url", "tiles", "bounds", "minzoom", "maxzoom", "tileSize", "attribution", "encoding"], Ue = y({
   name: "MglRasterDemSource",
   props: {
     sourceId: {
@@ -994,13 +1060,13 @@ const je = ["animate", "coordinates", "canvas"], Fe = f({
     encoding: String
   },
   setup(e) {
-    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
     return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "raster-dem", Ge, l), { source: i };
   },
   render() {
     return p("Video Source");
   }
-}), Ye = ["url", "tiles", "bounds", "scheme", "minzoom", "maxzoom", "attribution", "promoteId"], Ke = f({
+}), Ye = ["url", "tiles", "bounds", "scheme", "minzoom", "maxzoom", "attribution", "promoteId"], Ke = y({
   name: "MglVectorSource",
   props: {
     sourceId: {
@@ -1017,19 +1083,25 @@ const je = ["animate", "coordinates", "canvas"], Fe = f({
     promoteId: Object
   },
   setup(e) {
-    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
-    return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "vector", Ye, l), h(() => e.tiles, (d) => {
-      var u;
-      return (u = i.value) == null ? void 0 : u.setTiles(d || []);
-    }), h(() => e.url, (d) => {
-      var u;
-      return (u = i.value) == null ? void 0 : u.setUrl(d || "");
-    }), { source: i };
+    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "vector", Ye, l), h(
+      () => e.tiles,
+      (d) => {
+        var u;
+        return (u = i.value) == null ? void 0 : u.setTiles(d || []);
+      }
+    ), h(
+      () => e.url,
+      (d) => {
+        var u;
+        return (u = i.value) == null ? void 0 : u.setUrl(d || "");
+      }
+    ), { source: i };
   },
   render() {
     return p("Vector Source");
   }
-}), Je = ["urls", "coordinates"], Xe = f({
+}), Je = ["urls", "coordinates"], Xe = y({
   name: "MglVideoSource",
   props: {
     sourceId: {
@@ -1040,11 +1112,14 @@ const je = ["animate", "coordinates", "canvas"], Fe = f({
     coordinates: Array
   },
   setup(e) {
-    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
-    return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "video", Je, l), h(() => e.coordinates, (d) => {
-      var u;
-      return (u = i.value) == null ? void 0 : u.setCoordinates(d || []);
-    }), { source: i };
+    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "video", Je, l), h(
+      () => e.coordinates,
+      (d) => {
+        var u;
+        return (u = i.value) == null ? void 0 : u.setCoordinates(d || []);
+      }
+    ), { source: i };
   },
   render() {
     return p("Video Source");
@@ -1074,7 +1149,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = f({
   "touchstart",
   "touchend",
   "touchcancel"
-], z = f({
+], z = y({
   props: {
     layerId: {
       type: String,
@@ -1107,7 +1182,10 @@ const je = ["animate", "coordinates", "canvas"], Fe = f({
   ]
 });
 function k(e, t, o, a) {
-  return Object.keys(o).filter((r) => o[r] !== void 0 && Qe.indexOf(r) !== -1).reduce((r, i) => (r[i === "sourceLayer" ? "source-layer" : i] = J(o[i]), r), { type: t, source: o.source || a, id: e });
+  return Object.keys(o).filter((r) => o[r] !== void 0 && Qe.indexOf(r) !== -1).reduce(
+    (r, i) => (r[i === "sourceLayer" ? "source-layer" : i] = J(o[i]), r),
+    { type: t, source: o.source || a, id: e }
+  );
 }
 function F(e, t, o) {
   if (!!o.props)
@@ -1131,7 +1209,7 @@ function V(e, t, o, a, r) {
     r.unregisterUnmountHandler(a.layerId), i();
   });
 }
-const tt = f({
+const tt = y({
   name: "MglBackgroundLayer",
   mixins: [z],
   props: {
@@ -1144,10 +1222,14 @@ const tt = f({
       T("Background Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = n(y), a = n(b), r = n(M), i = n(x), l = C(r, e.source || t);
-    h([a, l], ([u, g]) => {
-      u && (g || g === void 0) && o.value.addLayer(k(e.layerId, "background", e, t), e.before || void 0);
-    }, { immediate: !0 });
+    const o = n(f), a = n(b), r = n(M), i = n(x), l = C(r, e.source || t);
+    h(
+      [a, l],
+      ([u, g]) => {
+        u && (g || g === void 0) && o.value.addLayer(k(e.layerId, "background", e, t), e.before || void 0);
+      },
+      { immediate: !0 }
+    );
     function d() {
       a.value && o.value.removeLayer(e.layerId);
     }
@@ -1158,7 +1240,7 @@ const tt = f({
   render() {
     return p("Background Layer");
   }
-}), ot = f({
+}), ot = y({
   name: "MglCircleLayer",
   mixins: [z],
   props: {
@@ -1171,15 +1253,19 @@ const tt = f({
       T("Circle Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
-    h([r, d], ([u, g]) => {
-      u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "circle", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
-    }, { immediate: !0 }), V(r, a, o, e, l);
+    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    h(
+      [r, d],
+      ([u, g]) => {
+        u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "circle", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
+      },
+      { immediate: !0 }
+    ), V(r, a, o, e, l);
   },
   render() {
     return p("Circle Layer");
   }
-}), at = f({
+}), at = y({
   name: "MglFillLayer",
   mixins: [z],
   props: {
@@ -1192,15 +1278,19 @@ const tt = f({
       T("Fill Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
-    h([r, d], ([u, g]) => {
-      u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "fill", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
-    }, { immediate: !0 }), V(r, a, o, e, l);
+    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    h(
+      [r, d],
+      ([u, g]) => {
+        u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "fill", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
+      },
+      { immediate: !0 }
+    ), V(r, a, o, e, l);
   },
   render() {
     return p("Fill Layer");
   }
-}), rt = f({
+}), rt = y({
   name: "MglFillExtrusionLayer",
   mixins: [z],
   props: {
@@ -1213,15 +1303,19 @@ const tt = f({
       T("Fill Extrude Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
-    h([r, d], ([u, g]) => {
-      u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "fill-extrusion", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
-    }, { immediate: !0 }), V(r, a, o, e, l);
+    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    h(
+      [r, d],
+      ([u, g]) => {
+        u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "fill-extrusion", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
+      },
+      { immediate: !0 }
+    ), V(r, a, o, e, l);
   },
   render() {
     return p("Fill Extrusion Layer");
   }
-}), it = f({
+}), it = y({
   name: "MglHeatmapLayer",
   mixins: [z],
   props: {
@@ -1234,15 +1328,19 @@ const tt = f({
       T("Heatmap Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
-    h([r, d], ([u, g]) => {
-      u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "heatmap", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
-    }, { immediate: !0 }), V(r, a, o, e, l);
+    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    h(
+      [r, d],
+      ([u, g]) => {
+        u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "heatmap", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
+      },
+      { immediate: !0 }
+    ), V(r, a, o, e, l);
   },
   render() {
     return p("Heatmap Layer");
   }
-}), nt = f({
+}), nt = y({
   name: "MglHillshadeLayer",
   mixins: [z],
   props: {
@@ -1255,15 +1353,19 @@ const tt = f({
       T("Hillshade Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
-    h([r, d], ([u, g]) => {
-      u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "hillshade", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
-    }, { immediate: !0 }), V(r, a, o, e, l);
+    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    h(
+      [r, d],
+      ([u, g]) => {
+        u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "hillshade", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
+      },
+      { immediate: !0 }
+    ), V(r, a, o, e, l);
   },
   render() {
     return p("Hillshade Layer");
   }
-}), st = f({
+}), st = y({
   name: "MglLineLayer",
   mixins: [z],
   props: {
@@ -1276,15 +1378,19 @@ const tt = f({
       T("Line Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
-    h([r, d], ([u, g]) => {
-      u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "line", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
-    }, { immediate: !0 }), V(r, a, o, e, l);
+    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    h(
+      [r, d],
+      ([u, g]) => {
+        u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "line", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
+      },
+      { immediate: !0 }
+    ), V(r, a, o, e, l);
   },
   render() {
     return p("Line Layer");
   }
-}), lt = f({
+}), lt = y({
   name: "MglRasterLayer",
   mixins: [z],
   props: {
@@ -1297,15 +1403,19 @@ const tt = f({
       T("Raster Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
-    h([r, d], ([u, g]) => {
-      u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "raster", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
-    }, { immediate: !0 }), V(r, a, o, e, l);
+    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    h(
+      [r, d],
+      ([u, g]) => {
+        u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "raster", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
+      },
+      { immediate: !0 }
+    ), V(r, a, o, e, l);
   },
   render() {
     return p("Raster Layer");
   }
-}), ut = f({
+}), ut = y({
   name: "MglSymbolLayer",
   mixins: [z],
   props: {
@@ -1318,10 +1428,14 @@ const tt = f({
       T("Symbol Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
-    h([r, d], ([u, g]) => {
-      u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "symbol", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
-    }, { immediate: !0 }), V(r, a, o, e, l);
+    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    h(
+      [r, d],
+      ([u, g]) => {
+        u && (g || g === void 0) && (a.value.addLayer(k(e.layerId, "symbol", e, t), e.before || void 0), F(a.value, e.layerId, o.vnode));
+      },
+      { immediate: !0 }
+    ), V(r, a, o, e, l);
   },
   render() {
     return p("Symbol Layer");
@@ -1355,11 +1469,13 @@ const tt = f({
   MglLineLayer: st,
   MglRasterLayer: lt,
   MglSymbolLayer: ut
-}, Symbol.toStringTag, { value: "Module" })), ft = function(t) {
-  Object.entries(ct).forEach(([o, a]) => {
-    t.component(o, a);
+}, Symbol.toStringTag, { value: "Module" }));
+function yt(e) {
+  Object.entries(ct).forEach(([t, o]) => {
+    e.component(t, o);
   });
-};
+}
+const ft = module.exports;
 export {
   Ce as MglAttributionControl,
   tt as MglBackgroundLayer,
@@ -1393,8 +1509,9 @@ export {
   M as componentIdSymbol,
   ft as default,
   _ as emitterSymbol,
+  yt as install,
   b as isLoadedSymbol,
-  y as mapSymbol,
+  f as mapSymbol,
   L as sourceIdSymbol,
   x as sourceLayerRegistry,
   gt as useMap,
