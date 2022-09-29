@@ -1,9 +1,9 @@
 var ue = Object.defineProperty;
 var ce = (e, t, o) => t in e ? ue(e, t, { enumerable: !0, configurable: !0, writable: !0, value: o }) : e[t] = o;
 var S = (e, t, o) => (ce(e, typeof t != "symbol" ? t + "" : t, o), o);
-import { reactive as te, watch as h, defineComponent as y, markRaw as oe, getCurrentInstance as A, shallowRef as X, ref as E, provide as v, onMounted as de, unref as J, onBeforeUnmount as w, h as R, inject as n, createCommentVNode as p, Teleport as ne, nextTick as me, warn as T, renderSlot as Q, createTextVNode as ae, isRef as he } from "vue";
-import { Map as ge, AttributionControl as ye, FullscreenControl as fe, GeolocateControl as ve, NavigationControl as pe, ScaleControl as be, Marker as Se } from "maplibre-gl";
-const f = Symbol("map"), b = Symbol("isLoaded"), M = Symbol("componentId"), L = Symbol("sourceId"), x = Symbol("sourceLayerRegistry"), _ = Symbol("emitter"), m = te({
+import { reactive as te, watch as h, defineComponent as f, markRaw as oe, getCurrentInstance as A, shallowRef as X, ref as E, provide as v, onMounted as de, unref as J, onBeforeUnmount as w, h as R, inject as n, createCommentVNode as p, Teleport as ne, nextTick as me, warn as T, renderSlot as Q, createTextVNode as ae, isRef as he } from "vue";
+import { Map as ge, AttributionControl as fe, FullscreenControl as ye, GeolocateControl as ve, NavigationControl as pe, ScaleControl as be, Marker as Se } from "maplibre-gl";
+const y = Symbol("map"), b = Symbol("isLoaded"), M = Symbol("componentId"), L = Symbol("sourceId"), x = Symbol("sourceLayerRegistry"), _ = Symbol("emitter"), m = te({
   style: "https://demotiles.maplibre.org/style.json",
   center: Object.freeze([0, 0]),
   zoom: 1,
@@ -166,7 +166,7 @@ function Oe(e, t = 250, o = !1) {
     clearTimeout(a);
   }, r;
 }
-const xe = y({
+const xe = f({
   name: "MglMap",
   props: {
     width: { type: [Number, String], default: "100%" },
@@ -270,7 +270,7 @@ const xe = y({
   setup(e, t) {
     const o = oe(A()), a = X(null), r = X(null), i = X(null), l = E(!1), d = E(!1), u = /* @__PURE__ */ new Map(), g = Me(), P = Le(o, e.mapKey);
     let Z;
-    return v(f, i), v(b, d), v(M, o.uid), v(L, ""), v(_, g), h(
+    return v(y, i), v(b, d), v(M, o.uid), v(L, ""), v(_, g), h(
       () => e.bearing,
       (c) => {
         var s;
@@ -391,7 +391,7 @@ const xe = y({
       [R("div", { ref: "container", class: "mgl-wrapper" }), this.isInitialized && this.$slots.default ? this.$slots.default() : void 0]
     );
   }
-}), Ce = y({
+}), Ce = f({
   name: "MglAttributionControl",
   props: {
     position: {
@@ -402,7 +402,7 @@ const xe = y({
     customAttribution: [String, Array]
   },
   setup(e) {
-    const t = n(f), o = new ye({ compact: e.compact, customAttribution: e.customAttribution });
+    const t = n(y), o = new fe({ compact: e.compact, customAttribution: e.customAttribution });
     j(() => e.position, t, o), w(() => t.value.removeControl(o));
   },
   render() {
@@ -427,7 +427,7 @@ const xe = y({
 };
 let q = D;
 S(q, "CONTROL_CLASS", "maplibregl-ctrl"), S(q, "CONTROL_GROUP_CLASS", "maplibregl-ctrl-group");
-const we = y({
+const we = f({
   name: "MglCustomControl",
   props: {
     position: {
@@ -440,7 +440,7 @@ const we = y({
     }
   },
   setup(e) {
-    const t = n(f), o = E(!1), a = new q(o, e.noClasses);
+    const t = n(y), o = E(!1), a = new q(o, e.noClasses);
     return j(() => e.position, t, a), h(
       () => e.noClasses,
       (r) => a.setClasses(r)
@@ -451,7 +451,7 @@ const we = y({
   render() {
     return this.isAdded ? R(ne, { to: this.container }, this.$slots.default ? this.$slots.default() : void 0) : p("custom-component");
   }
-}), Re = y({
+}), Re = f({
   name: "MglFullscreenControl",
   props: {
     position: {
@@ -465,7 +465,7 @@ const we = y({
     }
   },
   setup(e) {
-    const t = n(f), o = new fe(e.container ? { container: e.container } : void 0);
+    const t = n(y), o = new ye(e.container ? { container: e.container } : void 0);
     j(() => e.position, t, o), w(() => t.value.removeControl(o));
   },
   render() {
@@ -527,7 +527,7 @@ class Ie {
     ), o.fillRect(this.graphRight + this.graphWidth - r, this.graphTop, r, this.graphHeight), o.fillStyle = this.background, o.globalAlpha = 0.75, o.fillRect(this.graphRight + this.graphWidth - r, this.graphTop, r, (1 - t / 100) * this.graphHeight);
   }
 }
-const Te = y({
+const Te = f({
   name: "MglFrameRateControl",
   props: {
     position: {
@@ -572,7 +572,7 @@ const Te = y({
     }
   },
   setup(e) {
-    const t = n(f), o = new Ie(
+    const t = n(y), o = new Ie(
       e.background,
       e.barWidth,
       e.color,
@@ -587,7 +587,7 @@ const Te = y({
   },
   render() {
   }
-}), Pe = y({
+}), Pe = f({
   name: "MglGeolocationControl",
   props: {
     position: {
@@ -617,7 +617,7 @@ const Te = y({
     }
   },
   setup(e) {
-    const t = n(f), o = new ve({
+    const t = n(y), o = new ve({
       positionOptions: e.positionOptions,
       fitBoundsOptions: e.fitBoundsOptions,
       trackUserLocation: e.trackUserLocation,
@@ -628,7 +628,7 @@ const Te = y({
   },
   render() {
   }
-}), Ae = y({
+}), Ae = f({
   name: "MglNavigationControl",
   props: {
     position: {
@@ -641,14 +641,14 @@ const Te = y({
     visualizePitch: Boolean
   },
   setup(e) {
-    const t = n(f), o = new pe({ showCompass: e.showCompass, showZoom: e.showZoom, visualizePitch: e.visualizePitch });
+    const t = n(y), o = new pe({ showCompass: e.showCompass, showZoom: e.showZoom, visualizePitch: e.visualizePitch });
     j(() => e.position, t, o), w(() => t.value.removeControl(o));
   },
   render() {
   }
 });
 var le = /* @__PURE__ */ ((e) => (e.IMPERIAL = "imperial", e.METRIC = "metric", e.NAUTICAL = "nautical", e))(le || {});
-const _e = Object.values(le), Ne = y({
+const _e = Object.values(le), Ne = f({
   name: "MglScaleControl",
   props: {
     position: {
@@ -663,7 +663,7 @@ const _e = Object.values(le), Ne = y({
     }
   },
   setup(e) {
-    const t = n(f), o = new be({ maxWidth: e.maxWidth, unit: e.unit });
+    const t = n(y), o = new be({ maxWidth: e.maxWidth, unit: e.unit });
     j(() => e.position, t, o), w(() => t.value.removeControl(o));
   },
   render() {
@@ -684,7 +684,7 @@ const ze = Object.values(K), U = {
     size: 0,
     viewbox: "0 0 0 0"
   }
-}, ee = y({
+}, ee = f({
   name: "MglButton",
   props: {
     type: {
@@ -725,7 +725,7 @@ var ke = "M12,18.54L19.37,12.8L21,14.07L12,21.07L3,14.07L4.62,12.81L12,18.54M12,
 function re(e) {
   return e && !!e.stopPropagation;
 }
-const Be = y({
+const Be = f({
   name: "MglStyleSwitchControl",
   props: {
     position: {
@@ -747,7 +747,7 @@ const Be = y({
   },
   emits: ["update:modelValue", "update:isOpen"],
   setup(e, t) {
-    const o = n(f), a = n(b), r = n(_), i = E(!1), l = E(e.isOpen === void 0 ? !1 : e.isOpen), d = E(e.modelValue === void 0 ? e.mapStyles.length ? e.mapStyles[0] : null : e.modelValue), u = new q(i, !1), g = c.bind(null, !1);
+    const o = n(y), a = n(b), r = n(_), i = E(!1), l = E(e.isOpen === void 0 ? !1 : e.isOpen), d = E(e.modelValue === void 0 ? e.mapStyles.length ? e.mapStyles[0] : null : e.modelValue), u = new q(i, !1), g = c.bind(null, !1);
     function P() {
       const s = o.value.getStyle().name;
       for (let O = 0, G = e.mapStyles.length; O < G; O++)
@@ -854,7 +854,7 @@ const Be = y({
       ])
     );
   }
-}), Ee = y({
+}), Ee = f({
   name: "MglMarker",
   props: {
     coordinates: {
@@ -871,7 +871,7 @@ const Be = y({
     scale: Number
   },
   setup(e) {
-    const t = n(f), o = Object.keys(e).filter((r) => e[r] !== void 0 && I.MARKER_OPTION_KEYS.indexOf(r) !== -1).reduce((r, i) => (r[i] = J(e[i]), r), {}), a = new Se(o);
+    const t = n(y), o = Object.keys(e).filter((r) => e[r] !== void 0 && I.MARKER_OPTION_KEYS.indexOf(r) !== -1).reduce((r, i) => (r[i] = J(e[i]), r), {}), a = new Se(o);
     return a.setLngLat(e.coordinates).addTo(t.value), h(
       () => e.coordinates,
       (r) => a.setLngLat(r)
@@ -926,7 +926,7 @@ class W {
     this.unmountHandlers.forEach((t) => t());
   }
 }
-const je = ["animate", "coordinates", "canvas"], Fe = y({
+const je = ["animate", "coordinates", "canvas"], Fe = f({
   name: "MglCanvasSource",
   props: {
     sourceId: {
@@ -938,7 +938,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
     canvas: [HTMLCanvasElement, String]
   },
   setup(e) {
-    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
     return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "canvas", je, l), h(
       () => e.coordinates,
       (d) => {
@@ -965,7 +965,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
   "generateId",
   "promoteId",
   "filter"
-], Ze = y({
+], Ze = f({
   name: "MglGeoJsonSource",
   props: {
     sourceId: {
@@ -988,7 +988,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
     filter: [Array, String, Object]
   },
   setup(e) {
-    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
     return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "geojson", Ve, l), h(he(e.data) ? e.data : () => e.data, (d) => {
       var u;
       return (u = i.value) == null ? void 0 : u.setData(d || { type: "FeatureCollection", features: [] });
@@ -997,7 +997,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
   render() {
     return [p("GeoJSON Source"), this.source && this.$slots.default ? this.$slots.default() : void 0];
   }
-}), $e = ["url", "coordinates"], We = y({
+}), $e = ["url", "coordinates"], We = f({
   name: "MglImageSource",
   props: {
     sourceId: {
@@ -1008,7 +1008,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
     coordinates: Array
   },
   setup(e) {
-    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
     return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "image", $e, l), h(
       () => e.coordinates,
       (d) => {
@@ -1020,7 +1020,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
   render() {
     return [p("Image Source"), this.source && this.$slots.default ? this.$slots.default() : void 0];
   }
-}), qe = ["url", "tiles", "bounds", "minzoom", "maxzoom", "tileSize", "scheme", "attribution"], De = y({
+}), qe = ["url", "tiles", "bounds", "minzoom", "maxzoom", "tileSize", "scheme", "attribution"], De = f({
   name: "MglRasterSource",
   props: {
     sourceId: {
@@ -1037,13 +1037,13 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
     attribution: String
   },
   setup(e) {
-    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
     return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "raster", qe, l), { source: i };
   },
   render() {
     return p("Video Source");
   }
-}), Ge = ["url", "tiles", "bounds", "minzoom", "maxzoom", "tileSize", "attribution", "encoding"], Ue = y({
+}), Ge = ["url", "tiles", "bounds", "minzoom", "maxzoom", "tileSize", "attribution", "encoding"], Ue = f({
   name: "MglRasterDemSource",
   props: {
     sourceId: {
@@ -1060,13 +1060,13 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
     encoding: String
   },
   setup(e) {
-    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
     return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "raster-dem", Ge, l), { source: i };
   },
   render() {
     return p("Video Source");
   }
-}), Ye = ["url", "tiles", "bounds", "scheme", "minzoom", "maxzoom", "attribution", "promoteId"], Ke = y({
+}), Ye = ["url", "tiles", "bounds", "scheme", "minzoom", "maxzoom", "attribution", "promoteId"], Ke = f({
   name: "MglVectorSource",
   props: {
     sourceId: {
@@ -1083,7 +1083,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
     promoteId: Object
   },
   setup(e) {
-    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
     return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "vector", Ye, l), h(
       () => e.tiles,
       (d) => {
@@ -1101,7 +1101,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
   render() {
     return p("Vector Source");
   }
-}), Je = ["urls", "coordinates"], Xe = y({
+}), Je = ["urls", "coordinates"], Xe = f({
   name: "MglVideoSource",
   props: {
     sourceId: {
@@ -1112,7 +1112,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
     coordinates: Array
   },
   setup(e) {
-    const t = n(f), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
+    const t = n(y), o = n(b), a = n(_), r = n(M), i = C(r, e.sourceId), l = new W();
     return v(L, e.sourceId), v(x, l), $(t, i, o, a, e, "video", Je, l), h(
       () => e.coordinates,
       (d) => {
@@ -1149,7 +1149,7 @@ const je = ["animate", "coordinates", "canvas"], Fe = y({
   "touchstart",
   "touchend",
   "touchcancel"
-], z = y({
+], z = f({
   props: {
     layerId: {
       type: String,
@@ -1209,7 +1209,7 @@ function V(e, t, o, a, r) {
     r.unregisterUnmountHandler(a.layerId), i();
   });
 }
-const tt = y({
+const tt = f({
   name: "MglBackgroundLayer",
   mixins: [z],
   props: {
@@ -1222,7 +1222,7 @@ const tt = y({
       T("Background Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = n(f), a = n(b), r = n(M), i = n(x), l = C(r, e.source || t);
+    const o = n(y), a = n(b), r = n(M), i = n(x), l = C(r, e.source || t);
     h(
       [a, l],
       ([u, g]) => {
@@ -1240,7 +1240,7 @@ const tt = y({
   render() {
     return p("Background Layer");
   }
-}), ot = y({
+}), ot = f({
   name: "MglCircleLayer",
   mixins: [z],
   props: {
@@ -1253,7 +1253,7 @@ const tt = y({
       T("Circle Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
     h(
       [r, d],
       ([u, g]) => {
@@ -1265,7 +1265,7 @@ const tt = y({
   render() {
     return p("Circle Layer");
   }
-}), at = y({
+}), at = f({
   name: "MglFillLayer",
   mixins: [z],
   props: {
@@ -1278,7 +1278,7 @@ const tt = y({
       T("Fill Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
     h(
       [r, d],
       ([u, g]) => {
@@ -1290,7 +1290,7 @@ const tt = y({
   render() {
     return p("Fill Layer");
   }
-}), rt = y({
+}), rt = f({
   name: "MglFillExtrusionLayer",
   mixins: [z],
   props: {
@@ -1303,7 +1303,7 @@ const tt = y({
       T("Fill Extrude Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
     h(
       [r, d],
       ([u, g]) => {
@@ -1315,7 +1315,7 @@ const tt = y({
   render() {
     return p("Fill Extrusion Layer");
   }
-}), it = y({
+}), it = f({
   name: "MglHeatmapLayer",
   mixins: [z],
   props: {
@@ -1328,7 +1328,7 @@ const tt = y({
       T("Heatmap Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
     h(
       [r, d],
       ([u, g]) => {
@@ -1340,7 +1340,7 @@ const tt = y({
   render() {
     return p("Heatmap Layer");
   }
-}), nt = y({
+}), nt = f({
   name: "MglHillshadeLayer",
   mixins: [z],
   props: {
@@ -1353,7 +1353,7 @@ const tt = y({
       T("Hillshade Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
     h(
       [r, d],
       ([u, g]) => {
@@ -1365,7 +1365,7 @@ const tt = y({
   render() {
     return p("Hillshade Layer");
   }
-}), st = y({
+}), st = f({
   name: "MglLineLayer",
   mixins: [z],
   props: {
@@ -1378,7 +1378,7 @@ const tt = y({
       T("Line Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
     h(
       [r, d],
       ([u, g]) => {
@@ -1390,7 +1390,7 @@ const tt = y({
   render() {
     return p("Line Layer");
   }
-}), lt = y({
+}), lt = f({
   name: "MglRasterLayer",
   mixins: [z],
   props: {
@@ -1403,7 +1403,7 @@ const tt = y({
       T("Raster Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
     h(
       [r, d],
       ([u, g]) => {
@@ -1415,7 +1415,7 @@ const tt = y({
   render() {
     return p("Raster Layer");
   }
-}), ut = y({
+}), ut = f({
   name: "MglSymbolLayer",
   mixins: [z],
   props: {
@@ -1428,7 +1428,7 @@ const tt = y({
       T("Symbol Layer: layer must be used inside source tag or source prop must be set");
       return;
     }
-    const o = A(), a = n(f), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
+    const o = A(), a = n(y), r = n(b), i = n(M), l = n(x), d = C(i, e.source || t);
     h(
       [r, d],
       ([u, g]) => {
@@ -1470,12 +1470,11 @@ const tt = y({
   MglRasterLayer: lt,
   MglSymbolLayer: ut
 }, Symbol.toStringTag, { value: "Module" }));
-function yt(e) {
+function ft(e) {
   Object.entries(ct).forEach(([t, o]) => {
     e.component(t, o);
   });
 }
-const ft = module.exports;
 export {
   Ce as MglAttributionControl,
   tt as MglBackgroundLayer,
@@ -1509,9 +1508,9 @@ export {
   M as componentIdSymbol,
   ft as default,
   _ as emitterSymbol,
-  yt as install,
+  ft as install,
   b as isLoadedSymbol,
-  f as mapSymbol,
+  y as mapSymbol,
   L as sourceIdSymbol,
   x as sourceLayerRegistry,
   gt as useMap,

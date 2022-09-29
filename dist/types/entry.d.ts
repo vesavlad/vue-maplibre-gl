@@ -5,5 +5,4 @@ export * from './components/types';
 export { useMap } from './components/mapRegistry';
 export { defaults as MglDefaults } from './components/defaults';
 export { usePositionWatcher, Position } from './components/controls/shared';
-declare const _default: any;
-export default _default;
+export default install;
