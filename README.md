@@ -1,12 +1,12 @@
 # vue-maplibre-gl
 
-[![npm](https://img.shields.io/npm/v/vue-maplibre-gl.svg?style=flat-square)](https://www.npmjs.com/package/vue-maplibre-gl)
+[![npm](https://img.shields.io/npm/v/@vladvesa/vue-maplibre-gl.svg?style=flat-square)](https://www.npmjs.com/package/@vladvesa/vue-maplibre-gl)
 [![TypeScript](https://img.shields.io/badge/-Typescript-informational?style=flat-square)](https://www.typescriptlang.org/)
 [![vue2](https://img.shields.io/badge/vue-3.x-brightgreen.svg?style=flat-square)](https://vuejs.org/)
 
 A vue plugin for [maplibre-gl-js](https://github.com/maplibre/maplibre-gl-js). Only additional dependency is [mitt](https://github.com/developit/mitt).
 
-Size: [36 KB](https://bundlephobia.com/package/vue-maplibre-gl)
+Size: [36 KB](https://bundlephobia.com/package/@vladvesa/vue-maplibre-gl)
 
 ## Features
 
@@ -25,7 +25,7 @@ Size: [36 KB](https://bundlephobia.com/package/vue-maplibre-gl)
 # Installation
 
 ```shell
-yarn add vue-maplibre-gl maplibre-gl
+yarn add @vladvesa/vue-maplibre-gl maplibre-gl
 ```
 
 ## Default import
@@ -33,7 +33,7 @@ yarn add vue-maplibre-gl maplibre-gl
 Global Install:
 
 ```typescript
-import VueMaplibreGl from 'vue-maplibre-gl';
+import VueMaplibreGl from '@vladvesa/vue-maplibre-gl';
 
 app.use(VueMaplibreGl);
 ```
@@ -47,7 +47,7 @@ Add CSS:
 Use specific components:
 
 ```typescript
-import { MglMap } from 'vue-maplibre-gl';
+import { MglMap } from '@vladvesa/vue-maplibre-gl';
 
 app.component('MglMap', MglMap);
 ```
@@ -56,7 +56,7 @@ or in a parent components `.vue` file
 
 ```html
 <script>
-	import { MglMap } from 'vue-maplibre-gl';
+	import { MglMap } from '@vladvesa/vue-maplibre-gl';
 
 	export default {
 		components: {
@@ -69,12 +69,12 @@ or in a parent components `.vue` file
 
 # Usage
 
-See [/dev/serve.vue](https://github.com/razorness/vue-maplibre-gl/blob/master/dev/serve.vue) for a real world example.
+See [/dev/serve.vue](https://github.com/vladvesa/vue-maplibre-gl/blob/master/dev/serve.vue) for a real world example.
 
 # Demo
 
 ```shell
-git clone https://github.com/razorness/vue-maplibre-gl.git
+git clone https://github.com/vladvesa/vue-maplibre-gl.git
 cd vue-maplibre-gl
 yarn
 yarn serve
