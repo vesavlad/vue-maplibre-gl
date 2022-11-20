@@ -25,7 +25,7 @@
 		"url": "https://github.com/vesavlad/vue-maplibre-gl.git"
 	},
 	"license": "MIT",
-	"packageManager": "yarn@3.2.3",
+	"packageManager": "yarn@3.3.0",
 	"main": "dist/vue-maplibre-gl.ssr.js",
 	"browser": "dist/vue-maplibre-gl.esm.js",
 	"module": "dist/vue-maplibre-gl.esm.js",
