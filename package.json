@@ -1,6 +1,6 @@
 {
-	"name": "vue-maplibre-gl",
-	"version": "1.0.0-beta.26",
+	"name": "@vesa/vue-maplibre-gl",
+	"version": "1.0.0",
 	"description": "Vue 3 plugin for maplibre-gl",
 	"keywords": [
 		"vue",
@@ -22,7 +22,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/razorness/vue-maplibre-gl.git"
+		"url": "https://github.com/vesavlad/vue-maplibre-gl.git"
 	},
 	"license": "MIT",
 	"packageManager": "yarn@3.2.3",
