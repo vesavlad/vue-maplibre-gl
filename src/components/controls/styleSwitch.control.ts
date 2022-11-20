@@ -1,4 +1,4 @@
-import { createCommentVNode, createTextVNode, defineComponent, h, inject, onBeforeUnmount, PropType, ref, renderSlot, Teleport, watch } from 'vue';
+import { createCommentVNode, createTextVNode, defineComponent, h, inject, onBeforeUnmount, PropType, Ref, ref, renderSlot, Teleport, watch } from 'vue';
 import { Position, PositionValue, PositionValues, usePositionWatcher } from '@/components/controls/shared';
 import { emitterSymbol, isLoadedSymbol, mapSymbol, StyleSwitchItem } from '@/components/types';
 import { CustomControl } from '@/components/controls/custom.control';
@@ -7,6 +7,15 @@ import { mdiLayersOutline } from '@mdi/js';
 
 function isEvent(e: any): e is Event {
 	return e && !!(e as Event).stopPropagation;
+}
+
+export declare type MglStyleSwitchControl = {
+	added: Ref<Boolean>,
+	container?: HTMLDivElement,
+	styleFn: (s: StyleSwitchItem) => void,
+	toggleFn: (forceIsOpen?: boolean | Event, e?: Event) => void,
+	isOpen: Ref<Boolean>,
+	modelValue: any
 }
 
 export default defineComponent({
@@ -32,7 +41,7 @@ export default defineComponent({
 		},
 	},
 	emits: ['update:modelValue', 'update:isOpen'],
-	setup(props, ctx) {
+	setup: function(props, ctx) {
 		const map = inject(mapSymbol)!,
 			isMapLoaded = inject(isLoadedSymbol)!,
 			emitter = inject(emitterSymbol)!,
@@ -118,7 +127,11 @@ export default defineComponent({
 			}
 		}
 
-		return { isAdded, container: control.container, setStyle, toggleOpen, intIsOpen: isOpen, intModelValue: modelValue };
+		const result: MglStyleSwitchControl = { added: isAdded, styleFn: setStyle, toggleFn: toggleOpen, isOpen: isOpen, modelValue: modelValue}
+		result.container = control.container;
+		result.modelValue = modelValue
+
+		return  result;
 	},
 	// just only for code assist
 	template: `
@@ -140,15 +153,15 @@ export default defineComponent({
 		</div>
 	`,
 	render() {
-		if (!this.isAdded) {
+		if (!this.added) {
 			return createCommentVNode('style-switch-control');
 		}
 		const slotProps = {
-			isOpen: this.intIsOpen,
-			currentStyle: this.intModelValue,
+			isOpen: this.isOpen,
+			currentStyle: this.modelValue,
 			mapStyles: this.mapStyles,
-			toggleOpen: this.toggleOpen,
-			setStyle: this.setStyle,
+			toggleOpen: this.toggleFn,
+			setStyle: this.styleFn,
 		};
 		return h(
 			Teleport as any,
@@ -158,14 +171,14 @@ export default defineComponent({
 					h(MglButton, {
 						type: ButtonType.MDI,
 						path: mdiLayersOutline,
-						class: ['maplibregl-ctrl-icon maplibregl-style-switch', this.intIsOpen ? 'is-open' : ''],
-						onClick: this.toggleOpen.bind(null, true),
+						class: ['maplibregl-ctrl-icon maplibregl-style-switch', this.isOpen ? 'is-open' : ''],
+						onClick: this.toggleFn.bind(null, true),
 					}),
 				]),
 				renderSlot(this.$slots, 'styleList', slotProps, () => [
 					h(
 						'div',
-						{ class: ['maplibregl-style-list', this.intIsOpen ? 'is-open' : ''] },
+						{ class: ['maplibregl-style-list', this.isOpen ? 'is-open' : ''] },
 						this.mapStyles.map((s) => {
 							return s.icon
 								? h(
@@ -173,8 +186,8 @@ export default defineComponent({
 										{
 											type: ButtonType.MDI,
 											path: s.icon.path,
-											class: this.intModelValue?.name === s.name ? 'is-active' : '',
-											onClick: () => this.setStyle(s),
+											class: this.modelValue?.name === s.name ? 'is-active' : '',
+											onClick: () => this.styleFn(s),
 										},
 										createTextVNode(s.label)
 								  )
@@ -182,8 +195,8 @@ export default defineComponent({
 										'button',
 										{
 											type: 'button',
-											class: this.intModelValue?.name === s.name ? 'is-active' : '',
-											onClick: () => this.setStyle(s),
+											class: this.modelValue?.name === s.name ? 'is-active' : '',
+											onClick: () => this.styleFn(s),
 										},
 										createTextVNode(s.label)
 								  );

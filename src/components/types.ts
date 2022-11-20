@@ -1,5 +1,5 @@
 import { InjectionKey, Ref } from 'vue';
-import { Map, Style } from 'maplibre-gl';
+import { Map } from 'maplibre-gl';
 import { MglMap } from '@/components/index';
 import { Emitter } from 'mitt';
 import { SourceLayerRegistry } from '@/components/sources/sourceLayer.registry';
@@ -28,5 +28,6 @@ export interface StyleSwitchItem {
 	icon?: {
 		path: string;
 	};
-	style: Style | string;
+	// StyleSpecification | string
+	style: string| any | null
 }
