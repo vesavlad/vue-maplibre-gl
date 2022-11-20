@@ -10,13 +10,13 @@ function isEvent(e: any): e is Event {
 }
 
 export declare type MglStyleSwitchControl = {
-	added: Ref<Boolean>,
-	container?: HTMLDivElement,
-	styleFn: (s: StyleSwitchItem) => void,
-	toggleFn: (forceIsOpen?: boolean | Event, e?: Event) => void,
-	isOpen: Ref<Boolean>,
-	modelValue: any
-}
+	added: Ref<Boolean>;
+	container?: HTMLDivElement;
+	styleFn: (s: StyleSwitchItem) => void;
+	toggleFn: (forceIsOpen?: boolean | Event, e?: Event) => void;
+	isOpen: Ref<Boolean>;
+	modelValue: any;
+};
 
 export default defineComponent({
 	name: 'MglStyleSwitchControl',
@@ -41,7 +41,7 @@ export default defineComponent({
 		},
 	},
 	emits: ['update:modelValue', 'update:isOpen'],
-	setup: function(props, ctx) {
+	setup: function (props, ctx) {
 		const map = inject(mapSymbol)!,
 			isMapLoaded = inject(isLoadedSymbol)!,
 			emitter = inject(emitterSymbol)!,
@@ -127,11 +127,11 @@ export default defineComponent({
 			}
 		}
 
-		const result: MglStyleSwitchControl = { added: isAdded, styleFn: setStyle, toggleFn: toggleOpen, isOpen: isOpen, modelValue: modelValue}
+		const result: MglStyleSwitchControl = { added: isAdded, styleFn: setStyle, toggleFn: toggleOpen, isOpen: isOpen, modelValue: modelValue };
 		result.container = control.container;
-		result.modelValue = modelValue
+		result.modelValue = modelValue;
 
-		return  result;
+		return result;
 	},
 	// just only for code assist
 	template: `

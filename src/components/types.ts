@@ -29,5 +29,5 @@ export interface StyleSwitchItem {
 		path: string;
 	};
 	// StyleSpecification | string
-	style: string| any | null
+	style: string | any | null;
 }
