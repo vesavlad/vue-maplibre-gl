@@ -4,8 +4,8 @@ import { createCommentVNode, defineComponent, getCurrentInstance, inject, PropTy
 import { componentIdSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
 import { getSourceRef } from '@/components/sources/shared';
 
-export declare type HillshadeLayout = Pick<HillshadeLayerSpecification, "layout">
-export declare type HillshadePaint = Pick<HillshadeLayerSpecification, "paint">
+export declare type HillshadeLayout = Pick<HillshadeLayerSpecification, 'layout'>;
+export declare type HillshadePaint = Pick<HillshadeLayerSpecification, 'paint'>;
 
 export default defineComponent({
 	name: 'MglHillshadeLayer',

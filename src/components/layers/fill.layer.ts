@@ -4,8 +4,8 @@ import { createCommentVNode, defineComponent, getCurrentInstance, inject, PropTy
 import { componentIdSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
 import { getSourceRef } from '@/components/sources/shared';
 
-export declare type FillLayout = Pick<FillLayerSpecification, "layout">
-export declare type FillPaint = Pick<FillLayerSpecification, "paint">
+export declare type FillLayout = Pick<FillLayerSpecification, 'layout'>;
+export declare type FillPaint = Pick<FillLayerSpecification, 'paint'>;
 
 export default defineComponent({
 	name: 'MglFillLayer',

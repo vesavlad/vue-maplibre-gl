@@ -4,8 +4,8 @@ import { createCommentVNode, defineComponent, getCurrentInstance, inject, PropTy
 import { componentIdSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
 import { getSourceRef } from '@/components/sources/shared';
 
-export declare type RasterLayout = Pick<RasterLayerSpecification, "layout">
-export declare type RasterPaint = Pick<RasterLayerSpecification, "paint">
+export declare type RasterLayout = Pick<RasterLayerSpecification, 'layout'>;
+export declare type RasterPaint = Pick<RasterLayerSpecification, 'paint'>;
 
 export default defineComponent({
 	name: 'MglRasterLayer',

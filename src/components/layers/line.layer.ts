@@ -4,9 +4,8 @@ import { createCommentVNode, defineComponent, getCurrentInstance, inject, PropTy
 import { componentIdSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
 import { getSourceRef } from '@/components/sources/shared';
 
-export declare type LineLayout = Pick<LineLayerSpecification, "layout">
-export declare type LinePaint = Pick<LineLayerSpecification, "paint">
-
+export declare type LineLayout = Pick<LineLayerSpecification, 'layout'>;
+export declare type LinePaint = Pick<LineLayerSpecification, 'paint'>;
 
 export default defineComponent({
 	name: 'MglLineLayer',

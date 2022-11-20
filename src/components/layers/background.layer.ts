@@ -4,8 +4,8 @@ import { createCommentVNode, defineComponent, inject, onBeforeUnmount, PropType,
 import { componentIdSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
 import { getSourceRef } from '@/components/sources/shared';
 
-export declare type BackgroundLayout = Pick<BackgroundLayerSpecification, "layout">
-export declare type BackgroundPaint = Pick<BackgroundLayerSpecification, "paint">
+export declare type BackgroundLayout = Pick<BackgroundLayerSpecification, 'layout'>;
+export declare type BackgroundPaint = Pick<BackgroundLayerSpecification, 'paint'>;
 
 export default defineComponent({
 	name: 'MglBackgroundLayer',

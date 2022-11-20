@@ -26,18 +26,11 @@
 				<mgl-marker :coordinates="markerCoordinates" color="#cc0000" :scale="0.5" />
 
 				<mgl-geo-json-source source-id="geojson" :data="geoJsonSource.data">
-					<mgl-line-layer
-						layer-id="geojson"
-						:layout="geoJsonSource.layout"
-						:paint="geoJsonSource.paint"
-						@mouseenter="onMouseenter"
-					/>
+					<mgl-line-layer layer-id="geojson" :layout="geoJsonSource.layout" :paint="geoJsonSource.paint" @mouseenter="onMouseenter" />
 				</mgl-geo-json-source>
 
-				<mgl-vector-source source-id='xxx' :tiles='["https://api.opentransport.ro/map/v1/romania-stop-map/{z}/{x}/{y}.pbf"]'>
-					<mgl-symbol-layer layer-id='xxxx'>
-
-					</mgl-symbol-layer>
+				<mgl-vector-source source-id="xxx" :tiles="['https://api.opentransport.ro/map/v1/romania-stop-map/{z}/{x}/{y}.pbf']">
+					<mgl-symbol-layer layer-id="xxxx"> </mgl-symbol-layer>
 				</mgl-vector-source>
 			</mgl-map>
 		</div>
@@ -121,13 +114,13 @@ export default defineComponent({
 			geoJsonSource: {
 				show: ref(true),
 				data: {
-					"type": "FeatureCollection",
-					"features": [
+					type: 'FeatureCollection',
+					features: [
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[26.59497, 48.24114],
@@ -2016,23 +2009,23 @@ export default defineComponent({
 											[26.589563, 48.246686],
 											[26.591678, 48.245944],
 											[26.592695, 48.244264],
-											[26.59497, 48.24114]
-										]
-									]
-								]
+											[26.59497, 48.24114],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Botosani",
-								"cartodb_id": 1,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Botosani',
+								cartodb_id: 1,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[23.126735, 48.092012],
@@ -4019,23 +4012,23 @@ export default defineComponent({
 											[23.119193, 48.089393],
 											[23.120934, 48.090373],
 											[23.123921, 48.091253],
-											[23.126735, 48.092012]
-										]
-									]
-								]
+											[23.126735, 48.092012],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Satu Mare",
-								"cartodb_id": 2,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Satu Mare',
+								cartodb_id: 2,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[23.577165, 48.004841],
@@ -6384,23 +6377,23 @@ export default defineComponent({
 											[23.565788, 48.00399],
 											[23.570605, 48.002859],
 											[23.574526, 48.004095],
-											[23.577165, 48.004841]
-										]
-									]
-								]
+											[23.577165, 48.004841],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Maramures",
-								"cartodb_id": 3,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Maramures',
+								cartodb_id: 3,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[26.035501, 47.983927],
@@ -8920,23 +8913,23 @@ export default defineComponent({
 											[25.958377, 47.971736],
 											[25.976869, 47.97539],
 											[26.004405, 47.97932],
-											[26.035501, 47.983927]
-										]
-									]
-								]
+											[26.035501, 47.983927],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Suceava",
-								"cartodb_id": 4,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Suceava',
+								cartodb_id: 4,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[22.198003, 47.603342],
@@ -12003,23 +11996,23 @@ export default defineComponent({
 											[22.190039, 47.606319],
 											[22.192438, 47.605245],
 											[22.195855, 47.603894],
-											[22.198003, 47.603342]
-										]
-									]
-								]
+											[22.198003, 47.603342],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Bihor",
-								"cartodb_id": 5,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Bihor',
+								cartodb_id: 5,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[27.343316, 47.574788],
@@ -14707,23 +14700,23 @@ export default defineComponent({
 											[27.326256, 47.572833],
 											[27.328938, 47.57319],
 											[27.340255, 47.574111],
-											[27.343316, 47.574788]
-										]
-									]
-								]
+											[27.343316, 47.574788],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Iasi",
-								"cartodb_id": 6,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Iasi',
+								cartodb_id: 6,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[24.9522, 47.59683],
@@ -16800,23 +16793,23 @@ export default defineComponent({
 											[24.939905, 47.598357],
 											[24.944919, 47.598029],
 											[24.950604, 47.597093],
-											[24.9522, 47.59683]
-										]
-									]
-								]
+											[24.9522, 47.59683],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Bistrita-Nasaud",
-								"cartodb_id": 7,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Bistrita-Nasaud',
+								cartodb_id: 7,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[23.132915, 47.440837],
@@ -19034,23 +19027,23 @@ export default defineComponent({
 											[23.12454, 47.438083],
 											[23.12863, 47.438752],
 											[23.130928, 47.43977],
-											[23.132915, 47.440837]
-										]
-									]
-								]
+											[23.132915, 47.440837],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Salaj",
-								"cartodb_id": 8,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Salaj',
+								cartodb_id: 8,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[24.024557, 47.36161],
@@ -22622,23 +22615,23 @@ export default defineComponent({
 											[24.019314, 47.362062],
 											[24.020899, 47.36191],
 											[24.022485, 47.361758],
-											[24.024557, 47.36161]
-										]
-									]
-								]
+											[24.024557, 47.36161],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Cluj",
-								"cartodb_id": 9,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Cluj',
+								cartodb_id: 9,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[26.390841, 47.333484],
@@ -25213,23 +25206,23 @@ export default defineComponent({
 											[26.383057, 47.332416],
 											[26.385859, 47.332735],
 											[26.38979, 47.332758],
-											[26.390841, 47.333484]
-										]
-									]
-								]
+											[26.390841, 47.333484],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Neamt",
-								"cartodb_id": 10,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Neamt',
+								cartodb_id: 10,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[25.077419, 47.133986],
@@ -28212,23 +28205,23 @@ export default defineComponent({
 											[25.073338, 47.136189],
 											[25.073551, 47.135529],
 											[25.07527, 47.134721],
-											[25.077419, 47.133986]
-										]
-									]
-								]
+											[25.077419, 47.133986],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Mures",
-								"cartodb_id": 11,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Mures',
+								cartodb_id: 11,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[25.431652, 47.129615],
@@ -30854,23 +30847,23 @@ export default defineComponent({
 											[25.419722, 47.129512],
 											[25.424018, 47.129203],
 											[25.42735, 47.129337],
-											[25.431652, 47.129615]
-										]
-									]
-								]
+											[25.431652, 47.129615],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Harghita",
-								"cartodb_id": 12,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Harghita',
+								cartodb_id: 12,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[27.615778, 46.963884],
@@ -33359,23 +33352,23 @@ export default defineComponent({
 											[27.610831, 46.958978],
 											[27.613214, 46.960645],
 											[27.615417, 46.962888],
-											[27.615778, 46.963884]
-										]
-									]
-								]
+											[27.615778, 46.963884],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Vaslui",
-								"cartodb_id": 13,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Vaslui',
+								cartodb_id: 13,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[26.908625, 46.821542],
@@ -36050,23 +36043,23 @@ export default defineComponent({
 											[26.910244, 46.826031],
 											[26.90755, 46.823638],
 											[26.907093, 46.822499],
-											[26.908625, 46.821542]
-										]
-									]
-								]
+											[26.908625, 46.821542],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Bacau",
-								"cartodb_id": 14,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Bacau',
+								cartodb_id: 14,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[21.711302, 46.66054],
@@ -38706,23 +38699,23 @@ export default defineComponent({
 											[21.705376, 46.659169],
 											[21.707923, 46.659242],
 											[21.709688, 46.659747],
-											[21.711302, 46.66054]
-										]
-									]
-								]
+											[21.711302, 46.66054],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Arad",
-								"cartodb_id": 15,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Arad',
+								cartodb_id: 15,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[22.802083, 46.564169],
@@ -41686,23 +41679,23 @@ export default defineComponent({
 											[22.799189, 46.568146],
 											[22.799914, 46.566534],
 											[22.800811, 46.565315],
-											[22.802083, 46.564169]
-										]
-									]
-								]
+											[22.802083, 46.564169],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Alba",
-								"cartodb_id": 16,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Alba',
+								cartodb_id: 16,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[22.745626, 46.356569],
@@ -44042,23 +44035,23 @@ export default defineComponent({
 											[22.746587, 46.351702],
 											[22.746347, 46.352998],
 											[22.745789, 46.355134],
-											[22.745626, 46.356569]
-										]
-									]
-								]
+											[22.745626, 46.356569],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Hunedoara",
-								"cartodb_id": 17,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Hunedoara',
+								cartodb_id: 17,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[25.682047, 46.271206],
@@ -46149,23 +46142,23 @@ export default defineComponent({
 											[25.669418, 46.26096],
 											[25.675768, 46.264864],
 											[25.680475, 46.269424],
-											[25.682047, 46.271206]
-										]
-									]
-								]
+											[25.682047, 46.271206],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Covasna",
-								"cartodb_id": 18,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Covasna',
+								cartodb_id: 18,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[24.675929, 46.253565],
@@ -48462,23 +48455,23 @@ export default defineComponent({
 											[24.671881, 46.256706],
 											[24.672819, 46.255276],
 											[24.674789, 46.254135],
-											[24.675929, 46.253565]
-										]
-									]
-								]
+											[24.675929, 46.253565],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Sibiu",
-								"cartodb_id": 19,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Sibiu',
+								cartodb_id: 19,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[20.704157, 46.161423],
@@ -50884,23 +50877,23 @@ export default defineComponent({
 											[20.698266, 46.16001],
 											[20.700109, 46.160556],
 											[20.701648, 46.160938],
-											[20.704157, 46.161423]
-										]
-									]
-								]
+											[20.704157, 46.161423],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Timis",
-								"cartodb_id": 20,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Timis',
+								cartodb_id: 20,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[27.294081, 46.201946],
@@ -53083,23 +53076,23 @@ export default defineComponent({
 											[27.289819, 46.203752],
 											[27.291157, 46.203653],
 											[27.292578, 46.203051],
-											[27.294081, 46.201946]
-										]
-									]
-								]
+											[27.294081, 46.201946],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Vrancea",
-								"cartodb_id": 21,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Vrancea',
+								cartodb_id: 21,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[27.844805, 46.155567],
@@ -55081,23 +55074,23 @@ export default defineComponent({
 											[27.845678, 46.150455],
 											[27.845196, 46.151113],
 											[27.845093, 46.153122],
-											[27.844805, 46.155567]
-										]
-									]
-								]
+											[27.844805, 46.155567],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Galati",
-								"cartodb_id": 22,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Galati',
+								cartodb_id: 22,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[25.313011, 46.167087],
@@ -57688,23 +57681,23 @@ export default defineComponent({
 											[25.3134, 46.162929],
 											[25.312478, 46.16415],
 											[25.312589, 46.165583],
-											[25.313011, 46.167087]
-										]
-									]
-								]
+											[25.313011, 46.167087],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Brasov",
-								"cartodb_id": 23,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Brasov',
+								cartodb_id: 23,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[26.393011, 45.801072],
@@ -59728,23 +59721,23 @@ export default defineComponent({
 											[26.388952, 45.795403],
 											[26.39065, 45.797748],
 											[26.392241, 45.799951],
-											[26.393011, 45.801072]
-										]
-									]
-								]
+											[26.393011, 45.801072],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Buzau",
-								"cartodb_id": 24,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Buzau',
+								cartodb_id: 24,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[22.430089, 45.67128],
@@ -61970,23 +61963,23 @@ export default defineComponent({
 											[22.423752, 45.665864],
 											[22.425508, 45.667526],
 											[22.428037, 45.669138],
-											[22.430089, 45.67128]
-										]
-									]
-								]
+											[22.430089, 45.67128],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Caras-Severin",
-								"cartodb_id": 25,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Caras-Severin',
+								cartodb_id: 25,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[24.780144, 45.610014],
@@ -64313,23 +64306,23 @@ export default defineComponent({
 											[24.771155, 45.610354],
 											[24.774322, 45.610074],
 											[24.777895, 45.610368],
-											[24.780144, 45.610014]
-										]
-									]
-								]
+											[24.780144, 45.610014],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Arges",
-								"cartodb_id": 26,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Arges',
+								cartodb_id: 26,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[24.453442, 45.586768],
@@ -66606,23 +66599,23 @@ export default defineComponent({
 											[24.448917, 45.590115],
 											[24.451382, 45.588622],
 											[24.453437, 45.58727],
-											[24.453442, 45.586768]
-										]
-									]
-								]
+											[24.453442, 45.586768],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Valcea",
-								"cartodb_id": 27,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Valcea',
+								cartodb_id: 27,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[27.565195, 45.491642],
@@ -67735,23 +67728,23 @@ export default defineComponent({
 											[27.54975, 45.481154],
 											[27.556817, 45.485883],
 											[27.564095, 45.491069],
-											[27.565195, 45.491642]
-										]
-									]
-								]
+											[27.565195, 45.491642],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Braila",
-								"cartodb_id": 28,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Braila',
+								cartodb_id: 28,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[25.999387, 45.513853],
@@ -69778,23 +69771,23 @@ export default defineComponent({
 											[25.992605, 45.513583],
 											[25.995764, 45.513484],
 											[25.99844, 45.513757],
-											[25.999387, 45.513853]
-										]
-									]
-								]
+											[25.999387, 45.513853],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Prahova",
-								"cartodb_id": 29,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Prahova',
+								cartodb_id: 29,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[25.455101, 45.441295],
@@ -71708,23 +71701,23 @@ export default defineComponent({
 											[25.443369, 45.438474],
 											[25.446635, 45.439393],
 											[25.451326, 45.440306],
-											[25.455101, 45.441295]
-										]
-									]
-								]
+											[25.455101, 45.441295],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Dambovita",
-								"cartodb_id": 30,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Dambovita',
+								cartodb_id: 30,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[23.347491, 45.334095],
@@ -73762,23 +73755,23 @@ export default defineComponent({
 											[23.3358, 45.327503],
 											[23.337872, 45.32875],
 											[23.342128, 45.330704],
-											[23.347491, 45.334095]
-										]
-									]
-								]
+											[23.347491, 45.334095],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Gorj",
-								"cartodb_id": 31,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Gorj',
+								cartodb_id: 31,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[22.689219, 45.10137],
@@ -75549,23 +75542,23 @@ export default defineComponent({
 											[22.685997, 45.105496],
 											[22.686616, 45.104359],
 											[22.687818, 45.102964],
-											[22.689219, 45.10137]
-										]
-									]
-								]
+											[22.689219, 45.10137],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Mehedinti",
-								"cartodb_id": 32,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Mehedinti',
+								cartodb_id: 32,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[24.515904, 44.873593],
@@ -77578,23 +77571,23 @@ export default defineComponent({
 											[24.513861, 44.867974],
 											[24.515652, 44.869739],
 											[24.516395, 44.871771],
-											[24.515904, 44.873593]
-										]
-									]
-								]
+											[24.515904, 44.873593],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Olt",
-								"cartodb_id": 33,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Olt',
+								cartodb_id: 33,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[26.613912, 44.848359],
@@ -78712,23 +78705,23 @@ export default defineComponent({
 											[26.60769, 44.860389],
 											[26.60963, 44.85673],
 											[26.611654, 44.852739],
-											[26.613912, 44.848359]
-										]
-									]
-								]
+											[26.613912, 44.848359],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Ialomita",
-								"cartodb_id": 34,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Ialomita',
+								cartodb_id: 34,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[28.075172, 44.803073],
@@ -80143,23 +80136,23 @@ export default defineComponent({
 											[28.070871, 44.790309],
 											[28.074173, 44.798278],
 											[28.074809, 44.801497],
-											[28.075172, 44.803073]
-										]
-									]
-								]
+											[28.075172, 44.803073],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Constanta",
-								"cartodb_id": 35,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Constanta',
+								cartodb_id: 35,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[26.196184, 44.752034],
@@ -81056,7 +81049,7 @@ export default defineComponent({
 											[26.190597, 44.755196],
 											[26.192421, 44.753791],
 											[26.1937, 44.752919],
-											[26.196184, 44.752034]
+											[26.196184, 44.752034],
 										],
 										[
 											[26.014157, 44.484898],
@@ -81263,23 +81256,23 @@ export default defineComponent({
 											[26.012337, 44.513968],
 											[26.01023, 44.507676],
 											[26.007135, 44.492343],
-											[26.014157, 44.484898]
-										]
-									]
-								]
+											[26.014157, 44.484898],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Ilfov",
-								"cartodb_id": 36,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Ilfov',
+								cartodb_id: 36,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[23.766227, 44.710921],
@@ -82420,23 +82413,23 @@ export default defineComponent({
 											[23.761223, 44.70982],
 											[23.762916, 44.710447],
 											[23.76537, 44.710947],
-											[23.766227, 44.710921]
-										]
-									]
-								]
+											[23.766227, 44.710921],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Dolj",
-								"cartodb_id": 37,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Dolj',
+								cartodb_id: 37,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[26.711656, 44.532187],
@@ -83227,23 +83220,23 @@ export default defineComponent({
 											[26.688428, 44.550109],
 											[26.694232, 44.546009],
 											[26.702612, 44.539417],
-											[26.711656, 44.532187]
-										]
-									]
-								]
+											[26.711656, 44.532187],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Calarasi",
-								"cartodb_id": 38,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Calarasi',
+								cartodb_id: 38,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[25.604173, 44.530409],
@@ -84489,23 +84482,23 @@ export default defineComponent({
 											[25.603285, 44.528966],
 											[25.603595, 44.529504],
 											[25.60388, 44.529995],
-											[25.604173, 44.530409]
-										]
-									]
-								]
+											[25.604173, 44.530409],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Giurgiu",
-								"cartodb_id": 39,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Giurgiu',
+								cartodb_id: 39,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[25.368733, 44.496312],
@@ -85988,23 +85981,23 @@ export default defineComponent({
 											[25.350747, 44.473792],
 											[25.358736, 44.483231],
 											[25.364638, 44.490782],
-											[25.368733, 44.496312]
-										]
-									]
-								]
+											[25.368733, 44.496312],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Teleorman",
-								"cartodb_id": 41,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Teleorman',
+								cartodb_id: 41,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[28.932458, 44.611989],
@@ -87382,23 +87375,23 @@ export default defineComponent({
 											[28.939079, 44.620702],
 											[28.935845, 44.617312],
 											[28.932907, 44.61359],
-											[28.932458, 44.611989]
-										]
-									]
-								]
+											[28.932458, 44.611989],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Tulcea",
-								"cartodb_id": 42,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
+							properties: {
+								name: 'Tulcea',
+								cartodb_id: 42,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
 						},
 						{
-							"type": "Feature",
-							"geometry": {
-								"type": "MultiPolygon",
-								"coordinates": [
+							type: 'Feature',
+							geometry: {
+								type: 'MultiPolygon',
+								coordinates: [
 									[
 										[
 											[26.014157, 44.484898],
@@ -87605,19 +87598,19 @@ export default defineComponent({
 											[26.000874, 44.476562],
 											[26.006702, 44.476986],
 											[26.011738, 44.47968],
-											[26.014157, 44.484898]
-										]
-									]
-								]
+											[26.014157, 44.484898],
+										],
+									],
+								],
 							},
-							"properties": {
-								"name": "Bucuresti",
-								"cartodb_id": 40,
-								"created_at": "2014-09-16T08:47:27Z",
-								"updated_at": "2014-09-16T08:47:27Z"
-							}
-						}
-					]
+							properties: {
+								name: 'Bucuresti',
+								cartodb_id: 40,
+								created_at: '2014-09-16T08:47:27Z',
+								updated_at: '2014-09-16T08:47:27Z',
+							},
+						},
+					],
 				},
 				layout: {
 					'line-join': 'round',
@@ -87626,7 +87619,7 @@ export default defineComponent({
 				paint: {
 					'line-color': '#FF0000',
 					'line-width': 8,
-				} as LinePaint ,
+				} as LinePaint,
 			},
 		};
 	},

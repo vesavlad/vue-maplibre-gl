@@ -3,7 +3,7 @@ import { LayerSpecification, Map, MapLayerEventType, SourceSpecification } from 
 import { ComponentInternalInstance } from '@vue/runtime-core';
 import { SourceLayerRegistry } from '@/components/sources/sourceLayer.registry';
 
-declare type LayerSource = (LayerSpecification & { source?: string, ref?: string });
+declare type LayerSource = LayerSpecification & { source?: string; ref?: string };
 const sourceOpts: Array<keyof (Omit<LayerSource, 'source-layer'> & { sourceLayer?: string })> = [
 	'metadata',
 	'ref',
