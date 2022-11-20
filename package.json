@@ -1,6 +1,6 @@
 {
 	"name": "@vladvesa/vue-maplibre-gl",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "Vue 3 plugin for maplibre-gl",
 	"keywords": [
 		"vue",
@@ -26,7 +26,7 @@
 	"browser": "dist/vue-maplibre-gl.esm.js",
 	"module": "dist/vue-maplibre-gl.esm.js",
 	"unpkg": "dist/vue-maplibre-gl.min.js",
-	"types": "dist/types/entry.esm.d.ts",
+	"types": "dist/types/entry.d.ts",
 	"files": [
 		"dist/*",
 		"src/**/*.vue",

@@ -341,9 +341,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vesa/vue-maplibre-gl@workspace:.":
+"@vitejs/plugin-vue@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@vitejs/plugin-vue@npm:3.1.0"
+  peerDependencies:
+    vite: ^3.0.0
+    vue: ^3.2.25
+  checksum: 351436306090dee709314f71bb52f0b502c284c8f556d4aecbbdfea840b1d35a8af32e78e962df28d3a6034a75c78886448e3371cee320f711dab833f6ada274
+  languageName: node
+  linkType: hard
+
+"@vladvesa/vue-maplibre-gl@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@vesa/vue-maplibre-gl@workspace:."
+  resolution: "@vladvesa/vue-maplibre-gl@workspace:."
   dependencies:
     "@mdi/js": ^7.0.96
     "@vitejs/plugin-vue": ^3.1.0
@@ -361,16 +371,6 @@ __metadata:
     vue: ^3.2.0
   languageName: unknown
   linkType: soft
-
-"@vitejs/plugin-vue@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@vitejs/plugin-vue@npm:3.1.0"
-  peerDependencies:
-    vite: ^3.0.0
-    vue: ^3.2.25
-  checksum: 351436306090dee709314f71bb52f0b502c284c8f556d4aecbbdfea840b1d35a8af32e78e962df28d3a6034a75c78886448e3371cee320f711dab833f6ada274
-  languageName: node
-  linkType: hard
 
 "@vue/compiler-core@npm:3.2.39":
   version: 3.2.39
