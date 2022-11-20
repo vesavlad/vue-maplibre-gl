@@ -1,5 +1,5 @@
 import { onBeforeUnmount, ref, Ref, unref, watch } from 'vue';
-import { AnySourceData, AnySourceImpl, Map as GlMap } from 'maplibre-gl';
+import { SourceSpecification, Source, Map as GlMap } from 'maplibre-gl';
 import { MglEvents } from '@/components/types';
 import { Emitter } from 'mitt';
 import { SourceLayerRegistry } from '@/components/sources/sourceLayer.registry';
@@ -16,9 +16,9 @@ export function genSourceOpts<T extends object, O extends object>(type: string, 
 		);
 }
 
-const refs = new Map<string, Ref<AnySourceImpl | undefined | null>>();
+const refs = new Map<string, Ref<Source | undefined | null>>();
 
-export function getSourceRef<T = AnySourceImpl>(mcid: number, source: any): Ref<T | undefined | null> {
+export function getSourceRef<T = Source>(mcid: number, source: any): Ref<T | undefined | null> {
 	const isString = typeof source === 'string',
 		key = String(mcid) + (isString ? source : '');
 	let r = refs.get(key);
@@ -31,7 +31,7 @@ export function getSourceRef<T = AnySourceImpl>(mcid: number, source: any): Ref<
 
 export function bindSource<T extends object, O extends object>(
 	map: Ref<GlMap>,
-	source: Ref<AnySourceImpl | undefined | null>,
+	source: Ref<Source | undefined | null>,
 	isLoaded: Ref<boolean>,
 	emitter: Emitter<MglEvents>,
 	props: any,
@@ -41,7 +41,7 @@ export function bindSource<T extends object, O extends object>(
 ) {
 	function addSource() {
 		if (isLoaded.value) {
-			map.value.addSource(props.sourceId, genSourceOpts<T, O>(type, props, sourceOpts) as AnySourceData);
+			map.value.addSource(props.sourceId, genSourceOpts<T, O>(type, props, sourceOpts) as SourceSpecification);
 			source.value = map.value.getSource(props.sourceId);
 		}
 	}

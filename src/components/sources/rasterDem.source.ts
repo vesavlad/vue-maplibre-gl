@@ -1,10 +1,10 @@
 import { createCommentVNode, defineComponent, inject, PropType, provide } from 'vue';
 import { componentIdSymbol, emitterSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
-import { RasterDemSource } from 'maplibre-gl';
+import { RasterDEMSourceSpecification } from 'maplibre-gl';
 import { bindSource, getSourceRef } from '@/components/sources/shared';
 import { SourceLayerRegistry } from '@/components/sources/sourceLayer.registry';
 
-const sourceOpts: Array<keyof RasterDemSource> = ['url', 'tiles', 'bounds', 'minzoom', 'maxzoom', 'tileSize', 'attribution', 'encoding'];
+const sourceOpts: Array<keyof RasterDEMSourceSpecification> = ['url', 'tiles', 'bounds', 'minzoom', 'maxzoom', 'tileSize', 'attribution', 'encoding'];
 
 export default defineComponent({
 	name: 'MglRasterDemSource',
@@ -27,7 +27,7 @@ export default defineComponent({
 			isLoaded = inject(isLoadedSymbol)!,
 			emitter = inject(emitterSymbol)!,
 			cid = inject(componentIdSymbol)!,
-			source = getSourceRef<RasterDemSource>(cid, props.sourceId),
+			source = getSourceRef<RasterDEMSourceSpecification>(cid, props.sourceId),
 			registry = new SourceLayerRegistry();
 
 		provide(sourceIdSymbol, props.sourceId);

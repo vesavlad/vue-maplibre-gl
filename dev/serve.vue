@@ -69,10 +69,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, toRef, watch } from 'vue';
 import { MglDefaults, MglEvent, StyleSwitchItem, useMap } from '@/entry';
 import { mdiCursorDefaultClick } from '@mdi/js';
-import { LineLayout, LinePaint, MapLayerMouseEvent } from 'maplibre-gl';
+import { LineLayoutProps, LinePaintProps, MapLayerMouseEvent } from 'maplibre-gl';
+import { defineComponent, ref, toRef, watch } from 'vue';
 
 MglDefaults.style = 'https://api.maptiler.com/maps/streets/style.json?key=cQX2iET1gmOW38bedbUh';
 console.log('MglDefaults', MglDefaults);
@@ -149,11 +149,11 @@ export default defineComponent({
 				layout: {
 					'line-join': 'round',
 					'line-cap': 'round',
-				} as LineLayout,
+				} as LineLayoutProps,
 				paint: {
 					'line-color': '#FF0000',
 					'line-width': 8,
-				} as LinePaint,
+				} as LinePaintProps,
 			},
 		};
 	},
@@ -168,7 +168,7 @@ export default defineComponent({
 	},
 	mounted() {
 		setTimeout(() => (this.markerCoordinates = [13.377507, 42.516267]), 5000);
-		setInterval(() => (this.geoJsonSource.show.value = !this.geoJsonSource.show.value), 1000);
+		setInterval(() => (this.geoJsonSource.show.value = !this.geoJsonSource.show.value), 5000);
 	},
 });
 </script>

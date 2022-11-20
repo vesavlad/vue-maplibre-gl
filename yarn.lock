@@ -327,6 +327,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/maplibre-gl@npm:^1.14.0":
+  version: 1.14.0
+  resolution: "@types/maplibre-gl@npm:1.14.0"
+  dependencies:
+    maplibre-gl: "*"
+  checksum: 9eb47f2e1c5d14feac59033b3711f2678ceb05ebccc8c0b96ee07857948e38c03540243357ac41f72c8e6616861e1540964d14cb8cf3aa3adb6cfbdb46a6fc84
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:12.20.24":
   version: 12.20.24
   resolution: "@types/node@npm:12.20.24"
@@ -356,9 +365,10 @@ __metadata:
   resolution: "@vladvesa/vue-maplibre-gl@workspace:."
   dependencies:
     "@mdi/js": ^7.0.96
+    "@types/maplibre-gl": ^1.14.0
     "@vitejs/plugin-vue": ^3.1.0
     "@vue/compiler-sfc": ^3.2.37
-    maplibre-gl: ^2.3.0
+    maplibre-gl: ^2.4.0
     mitt: ^3.0.0
     prettier: ^2.7.1
     sass: ^1.54.9
@@ -1595,7 +1605,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"maplibre-gl@npm:^2.3.0":
+"maplibre-gl@npm:*, maplibre-gl@npm:^2.4.0":
   version: 2.4.0
   resolution: "maplibre-gl@npm:2.4.0"
   dependencies:

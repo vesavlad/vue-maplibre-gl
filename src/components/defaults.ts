@@ -1,7 +1,8 @@
-import { LngLatLike, MapboxOptions } from 'maplibre-gl';
+import { LngLatLike, MapOptions } from 'maplibre-gl';
 import { reactive } from 'vue';
 
-export const defaults = reactive<Omit<MapboxOptions, 'container'>>({
+export declare type CustomMapOptions = Omit<MapOptions, 'container'>;
+export const defaults: CustomMapOptions = reactive({
 	style: 'https://demotiles.maplibre.org/style.json',
 	center: Object.freeze([0, 0]) as LngLatLike,
 	zoom: 1,

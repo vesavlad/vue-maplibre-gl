@@ -1,6 +1,6 @@
 import { createCommentVNode, defineComponent, h, inject, nextTick, onBeforeUnmount, PropType, ref, Ref, Teleport, watch } from 'vue';
 import { Position, PositionValue, PositionValues, usePositionWatcher } from '@/components/controls/shared';
-import { IControl } from 'maplibre-gl';
+import { ControlPosition, IControl } from 'maplibre-gl';
 import { mapSymbol } from '@/components/types';
 
 export class CustomControl implements IControl {
@@ -14,7 +14,7 @@ export class CustomControl implements IControl {
 		this.setClasses(noClasses);
 	}
 
-	getDefaultPosition(): string {
+	getDefaultPosition(): ControlPosition {
 		return Position.TOP_LEFT;
 	}
 

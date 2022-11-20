@@ -1,7 +1,7 @@
 import { defineComponent, inject, onBeforeUnmount, PropType } from 'vue';
 import { Position, PositionValue, PositionValues, usePositionWatcher } from '@/components/controls/shared';
 import { mapSymbol } from '@/components/types';
-import { FitBoundsOptions, GeolocateControl, PositionOptions } from 'maplibre-gl';
+import { FitBoundsOptions, GeolocateControl } from 'maplibre-gl';
 
 export default defineComponent({
 	name: 'MglGeolocationControl',

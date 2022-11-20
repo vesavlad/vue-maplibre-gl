@@ -1,10 +1,10 @@
 import { createCommentVNode, defineComponent, inject, PropType, provide, watch } from 'vue';
 import { componentIdSymbol, emitterSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
-import { ImageSource, ImageSourceOptions } from 'maplibre-gl';
+import { Coordinates, ImageSource, ImageSourceSpecification } from 'maplibre-gl';
 import { bindSource, getSourceRef } from '@/components/sources/shared';
 import { SourceLayerRegistry } from '@/components/sources/sourceLayer.registry';
 
-const sourceOpts: Array<keyof ImageSourceOptions> = ['url', 'coordinates'];
+const sourceOpts: Array<keyof ImageSourceSpecification> = ['url', 'coordinates'];
 
 export default defineComponent({
 	name: 'MglImageSource',
@@ -14,7 +14,7 @@ export default defineComponent({
 			required: true,
 		},
 		url: String as PropType<string>,
-		coordinates: Array as PropType<number[][]>,
+		coordinates: Object as PropType<Coordinates>,
 	},
 	setup(props) {
 		const map = inject(mapSymbol)!,
@@ -30,7 +30,7 @@ export default defineComponent({
 		bindSource(map, source, isLoaded, emitter, props, 'image', sourceOpts, registry);
 		watch(
 			() => props.coordinates,
-			(v) => source.value?.setCoordinates(v || [])
+			(v) => source.value?.setCoordinates(v || ({} as Coordinates))
 		);
 
 		return { source };

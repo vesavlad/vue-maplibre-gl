@@ -1,11 +1,11 @@
-import { Map, MapboxOptions, MarkerOptions } from 'maplibre-gl';
+import { Map, MapOptions, MarkerOptions } from 'maplibre-gl';
 import { MglMap } from '@/components/index';
 import { MglEvent } from '@/components/types';
 
 export type MapEventHandler = (e: any) => void;
 
 export class MapLib {
-	static readonly MAP_OPTION_KEYS: Array<keyof MapboxOptions | 'mapStyle'> = [
+	static readonly MAP_OPTION_KEYS: Array<keyof MapOptions | 'mapStyle'> = [
 		'antialias',
 		'attributionControl',
 		'bearing',
@@ -48,7 +48,6 @@ export class MapLib {
 		'touchPitch',
 		'zoom',
 		'maxTileCacheSize',
-		'accessToken',
 	];
 
 	static readonly MARKER_OPTION_KEYS: Array<keyof MarkerOptions> = [

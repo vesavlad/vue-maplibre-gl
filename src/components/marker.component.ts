@@ -1,5 +1,5 @@
 import { defineComponent, inject, onBeforeUnmount, PropType, unref, watch } from 'vue';
-import { Alignment, Anchor, LngLatLike, Marker, MarkerOptions, PointLike } from 'maplibre-gl';
+import { Anchor, LngLatLike, Marker, MarkerOptions, PointLike } from 'maplibre-gl';
 import { MapLib } from '@/components/map.lib';
 import { mapSymbol } from '@/components/types';
 
@@ -11,13 +11,13 @@ export default defineComponent({
 			required: true,
 		},
 		offset: [Object, Array] as PropType<PointLike>,
-		anchor: String as PropType<Anchor>,
+		anchor: Object as PropType<Anchor>,
 		color: String as PropType<string>,
 		// draggable        : Boolean as PropType<boolean>, todo implement feature
 		clickTolerance: Number as PropType<number>,
 		rotation: Number as PropType<number>,
-		rotationAlignment: String as PropType<Alignment>,
-		pitchAlignment: String as PropType<Alignment>,
+		rotationAlignment: String as PropType<string>,
+		pitchAlignment: String as PropType<string>,
 		scale: Number as PropType<number>,
 	},
 	setup(props) {

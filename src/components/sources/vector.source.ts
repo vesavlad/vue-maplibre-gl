@@ -1,10 +1,10 @@
 import { createCommentVNode, defineComponent, inject, PropType, provide, watch } from 'vue';
 import { componentIdSymbol, emitterSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
-import { PromoteIdSpecification, VectorSource, VectorSourceImpl } from 'maplibre-gl';
+import { PromoteIdSpecification, VectorTileSource, VectorSourceSpecification } from 'maplibre-gl';
 import { bindSource, getSourceRef } from '@/components/sources/shared';
 import { SourceLayerRegistry } from '@/components/sources/sourceLayer.registry';
 
-const sourceOpts: Array<keyof VectorSource> = ['url', 'tiles', 'bounds', 'scheme', 'minzoom', 'maxzoom', 'attribution', 'promoteId'];
+const sourceOpts: Array<keyof VectorSourceSpecification> = ['url', 'tiles', 'bounds', 'scheme', 'minzoom', 'maxzoom', 'attribution', 'promoteId'];
 
 export default defineComponent({
 	name: 'MglVectorSource',
@@ -27,7 +27,7 @@ export default defineComponent({
 			isLoaded = inject(isLoadedSymbol)!,
 			emitter = inject(emitterSymbol)!,
 			cid = inject(componentIdSymbol)!,
-			source = getSourceRef<VectorSourceImpl>(cid, props.sourceId),
+			source = getSourceRef<VectorTileSource>(cid, props.sourceId),
 			registry = new SourceLayerRegistry();
 
 		provide(sourceIdSymbol, props.sourceId);

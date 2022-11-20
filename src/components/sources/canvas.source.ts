@@ -1,10 +1,10 @@
 import { createCommentVNode, defineComponent, inject, PropType, provide, watch } from 'vue';
 import { componentIdSymbol, emitterSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
-import { CanvasSource, CanvasSourceOptions } from 'maplibre-gl';
+import { CanvasSource, CanvasSourceSpecification, Coordinates } from 'maplibre-gl';
 import { bindSource, getSourceRef } from '@/components/sources/shared';
 import { SourceLayerRegistry } from '@/components/sources/sourceLayer.registry';
 
-const sourceOpts: Array<keyof CanvasSourceOptions> = ['animate', 'coordinates', 'canvas'];
+const sourceOpts: Array<keyof CanvasSourceSpecification> = ['animate', 'coordinates', 'canvas'];
 
 export default defineComponent({
 	name: 'MglCanvasSource',
@@ -13,7 +13,7 @@ export default defineComponent({
 			type: String as PropType<string>,
 			required: true,
 		},
-		coordinates: Array as PropType<number[][]>,
+		coordinates: Object as PropType<Coordinates>,
 		animate: Boolean as PropType<boolean>,
 		canvas: [HTMLCanvasElement, String] as PropType<HTMLCanvasElement | string>,
 	},
@@ -31,7 +31,7 @@ export default defineComponent({
 		bindSource(map, source, isLoaded, emitter, props, 'canvas', sourceOpts, registry);
 		watch(
 			() => props.coordinates,
-			(v) => source.value?.setCoordinates(v || [])
+			(v) => source.value?.setCoordinates(v || ({} as Coordinates))
 		);
 
 		return { source };

@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"forceConsistentCasingInFileNames": true,
 		"target": "esnext",
 		"module": "esnext",
 		"strict": true,
@@ -19,6 +20,7 @@
 		"paths": {
 			"@/*": ["src/*"]
 		},
+		"disableSizeLimit": true,
 		"lib": ["esnext", "dom", "dom.iterable", "scripthost"]
 	},
 	"exclude": ["node_modules", "dist"]

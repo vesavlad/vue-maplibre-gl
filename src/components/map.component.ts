@@ -1,5 +1,5 @@
 import { defineComponent, getCurrentInstance, h, markRaw, onBeforeUnmount, onMounted, PropType, provide, ref, shallowRef, unref, watch } from 'vue';
-import { FitBoundsOptions, LngLatBoundsLike, LngLatLike, Map as MaplibreMap, MapboxOptions, Style, TransformRequestFunction } from 'maplibre-gl';
+import { FitBoundsOptions, LngLatBoundsLike, LngLatLike, Map as MaplibreMap, MapOptions, Style, RequestTransformFunction } from 'maplibre-gl';
 import { componentIdSymbol, emitterSymbol, isLoadedSymbol, mapSymbol, MglEvents, sourceIdSymbol } from '@/components/types';
 import { defaults } from '@/components/defaults';
 import { MapLib } from '@/components/map.lib';
@@ -54,7 +54,7 @@ export default defineComponent({
 		scrollZoom: { type: Boolean as PropType<boolean>, default: () => defaults.scrollZoom },
 		mapStyle: { type: [String, Object] as PropType<Style | string>, default: () => defaults.style },
 		trackResize: { type: Boolean as PropType<boolean>, default: () => defaults.trackResize },
-		transformRequest: { type: Function as PropType<TransformRequestFunction>, default: defaults.transformRequest },
+		transformRequest: { type: Function as PropType<RequestTransformFunction>, default: defaults.transformRequest },
 		touchZoomRotate: { type: Boolean as PropType<boolean>, default: () => defaults.touchZoomRotate },
 		touchPitch: { type: Boolean as PropType<boolean>, default: () => defaults.touchPitch },
 		zoom: { type: Number as PropType<number>, default: () => defaults.zoom },
@@ -253,14 +253,14 @@ export default defineComponent({
 			registryItem.isMounted = true;
 
 			// build options
-			const opts: MapboxOptions = Object.keys(props)
-				.filter((opt) => (props as any)[opt] !== undefined && MapLib.MAP_OPTION_KEYS.indexOf(opt as keyof MapboxOptions) !== -1)
+			const opts: MapOptions = Object.keys(props)
+				.filter((opt) => (props as any)[opt] !== undefined && MapLib.MAP_OPTION_KEYS.indexOf(opt as keyof MapOptions) !== -1)
 				.reduce(
 					(obj, opt) => {
 						(obj as any)[opt === 'mapStyle' ? 'style' : opt] = unref((props as any)[opt]);
 						return obj;
 					},
-					{ container: container.value as HTMLDivElement } as MapboxOptions
+					{ container: container.value as HTMLDivElement } as MapOptions
 				);
 
 			// init map

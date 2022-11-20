@@ -20,7 +20,7 @@ export default defineComponent({
 	},
 	setup(props) {
 		const map = inject(mapSymbol)!,
-			control = new FullscreenControl(props.container ? { container: props.container } : undefined);
+			control = new FullscreenControl(props.container ? { container: props.container } : { container: undefined });
 		usePositionWatcher(() => props.position, map, control);
 		onBeforeUnmount(() => map.value.removeControl(control));
 	},

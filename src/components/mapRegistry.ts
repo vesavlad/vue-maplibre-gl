@@ -1,10 +1,10 @@
 import { MglMap } from '@/components/index';
-import maplibregl from 'maplibre-gl';
+import { Map as MaplibreGlMap } from 'maplibre-gl';
 import { reactive } from 'vue';
 
 export interface MapInstance {
 	component?: InstanceType<typeof MglMap>;
-	map?: maplibregl.Map;
+	map?: MaplibreGlMap;
 	isMounted: boolean;
 	isLoaded: boolean;
 }
@@ -31,8 +31,8 @@ export function registerMap(instance: InstanceType<typeof MglMap>, key: symbol |
 	component.isLoaded = false;
 	component.isMounted = false;
 	component.component = instance;
-	component.map = instance.map as maplibregl.Map;
-	component.isLoaded = (instance.map as maplibregl.Map)?.loaded() || false;
+	component.map = instance.map as MaplibreGlMap;
+	component.isLoaded = (instance.map as MaplibreGlMap)?.loaded() || false;
 
 	return component;
 }
