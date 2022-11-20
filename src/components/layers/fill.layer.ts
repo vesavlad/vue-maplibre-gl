@@ -1,8 +1,11 @@
-import { FillLayer, FillLayout, FillPaint } from 'maplibre-gl';
+import { FillLayerSpecification } from 'maplibre-gl';
 import { genLayerOpts, handleDispose, registerLayerEvents, Shared } from '@/components/layers/shared';
 import { createCommentVNode, defineComponent, getCurrentInstance, inject, PropType, warn, watch } from 'vue';
 import { componentIdSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
 import { getSourceRef } from '@/components/sources/shared';
+
+export declare type FillLayout = Pick<FillLayerSpecification, "layout">
+export declare type FillPaint = Pick<FillLayerSpecification, "paint">
 
 export default defineComponent({
 	name: 'MglFillLayer',
@@ -30,7 +33,7 @@ export default defineComponent({
 			[isLoaded, sourceRef],
 			([il, src]) => {
 				if (il && (src || src === undefined)) {
-					map.value.addLayer(genLayerOpts<FillLayer>(props.layerId, 'fill', props, sourceId), props.before || undefined);
+					map.value.addLayer(genLayerOpts<FillLayerSpecification>(props.layerId, 'fill', props, sourceId), props.before || undefined);
 					registerLayerEvents(map.value, props.layerId, ci.vnode);
 				}
 			},

@@ -1,8 +1,11 @@
-import { HeatmapLayer, HeatmapLayout, HeatmapPaint } from 'maplibre-gl';
+import { HeatmapLayerSpecification } from 'maplibre-gl';
 import { genLayerOpts, handleDispose, registerLayerEvents, Shared } from '@/components/layers/shared';
 import { createCommentVNode, defineComponent, getCurrentInstance, inject, PropType, warn, watch } from 'vue';
 import { componentIdSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
 import { getSourceRef } from '@/components/sources/shared';
+
+export declare type HeatmapLayout = Pick<HeatmapLayerSpecification, "layout">
+export declare type HeatmapPaint = Pick<HeatmapLayerSpecification, "paint">
 
 export default defineComponent({
 	name: 'MglHeatmapLayer',
@@ -30,7 +33,7 @@ export default defineComponent({
 			[isLoaded, sourceRef],
 			([il, src]) => {
 				if (il && (src || src === undefined)) {
-					map.value.addLayer(genLayerOpts<HeatmapLayer>(props.layerId, 'heatmap', props, sourceId), props.before || undefined);
+					map.value.addLayer(genLayerOpts<HeatmapLayerSpecification>(props.layerId, 'heatmap', props, sourceId), props.before || undefined);
 					registerLayerEvents(map.value, props.layerId, ci.vnode);
 				}
 			},

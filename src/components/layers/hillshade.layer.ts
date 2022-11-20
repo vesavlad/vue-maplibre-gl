@@ -1,8 +1,11 @@
-import { HillshadeLayer, HillshadeLayout, HillshadePaint } from 'maplibre-gl';
+import { HillshadeLayerSpecification } from 'maplibre-gl';
 import { genLayerOpts, handleDispose, registerLayerEvents, Shared } from '@/components/layers/shared';
 import { createCommentVNode, defineComponent, getCurrentInstance, inject, PropType, warn, watch } from 'vue';
 import { componentIdSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
 import { getSourceRef } from '@/components/sources/shared';
+
+export declare type HillshadeLayout = Pick<HillshadeLayerSpecification, "layout">
+export declare type HillshadePaint = Pick<HillshadeLayerSpecification, "paint">
 
 export default defineComponent({
 	name: 'MglHillshadeLayer',
@@ -30,7 +33,7 @@ export default defineComponent({
 			[isLoaded, sourceRef],
 			([il, src]) => {
 				if (il && (src || src === undefined)) {
-					map.value.addLayer(genLayerOpts<HillshadeLayer>(props.layerId, 'hillshade', props, sourceId), props.before || undefined);
+					map.value.addLayer(genLayerOpts<HillshadeLayerSpecification>(props.layerId, 'hillshade', props, sourceId), props.before || undefined);
 					registerLayerEvents(map.value, props.layerId, ci.vnode);
 				}
 			},

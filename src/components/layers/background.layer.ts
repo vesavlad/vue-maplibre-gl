@@ -1,8 +1,11 @@
-import { BackgroundLayer, BackgroundLayout, BackgroundPaint } from 'maplibre-gl';
+import { BackgroundLayerSpecification } from 'maplibre-gl';
 import { genLayerOpts, Shared } from '@/components/layers/shared';
 import { createCommentVNode, defineComponent, inject, onBeforeUnmount, PropType, warn, watch } from 'vue';
 import { componentIdSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
 import { getSourceRef } from '@/components/sources/shared';
+
+export declare type BackgroundLayout = Pick<BackgroundLayerSpecification, "layout">
+export declare type BackgroundPaint = Pick<BackgroundLayerSpecification, "paint">
 
 export default defineComponent({
 	name: 'MglBackgroundLayer',
@@ -29,7 +32,7 @@ export default defineComponent({
 			[isLoaded, sourceRef],
 			([il, src]) => {
 				if (il && (src || src === undefined)) {
-					map.value.addLayer(genLayerOpts<BackgroundLayer>(props.layerId, 'background', props, sourceId), props.before || undefined);
+					map.value.addLayer(genLayerOpts<BackgroundLayerSpecification>(props.layerId, 'background', props, sourceId), props.before || undefined);
 				}
 			},
 			{ immediate: true }

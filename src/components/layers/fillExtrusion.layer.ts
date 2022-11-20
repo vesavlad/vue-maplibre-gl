@@ -1,8 +1,11 @@
-import { FillExtrusionLayout, FillExtrusionPaint, LineLayer } from 'maplibre-gl';
+import { FillExtrusionLayerSpecification } from 'maplibre-gl';
 import { genLayerOpts, handleDispose, registerLayerEvents, Shared } from '@/components/layers/shared';
 import { createCommentVNode, defineComponent, getCurrentInstance, inject, PropType, warn, watch } from 'vue';
 import { componentIdSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
 import { getSourceRef } from '@/components/sources/shared';
+
+export declare type FillExtrusionLayout = Pick<FillExtrusionLayerSpecification, "layout">
+export declare type FillExtrusionPaint = Pick<FillExtrusionLayerSpecification, "paint">
 
 export default defineComponent({
 	name: 'MglFillExtrusionLayer',
@@ -30,7 +33,7 @@ export default defineComponent({
 			[isLoaded, sourceRef],
 			([il, src]) => {
 				if (il && (src || src === undefined)) {
-					map.value.addLayer(genLayerOpts<LineLayer>(props.layerId, 'fill-extrusion', props, sourceId), props.before || undefined);
+					map.value.addLayer(genLayerOpts<FillExtrusionLayerSpecification>(props.layerId, 'fill-extrusion', props, sourceId), props.before || undefined);
 					registerLayerEvents(map.value, props.layerId, ci.vnode);
 				}
 			},

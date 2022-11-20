@@ -1,9 +1,10 @@
 import { defineComponent, onBeforeUnmount, PropType, Ref, unref, VNode } from 'vue';
-import { AnySourceData, BackgroundLayer, Layer, Map, MapLayerEventType } from 'maplibre-gl';
+import { LayerSpecification, Map, MapLayerEventType, SourceSpecification } from 'maplibre-gl';
 import { ComponentInternalInstance } from '@vue/runtime-core';
 import { SourceLayerRegistry } from '@/components/sources/sourceLayer.registry';
 
-const sourceOpts: Array<keyof (Omit<BackgroundLayer, 'source-layer'> & { sourceLayer?: string })> = [
+declare type LayerSource = (LayerSpecification & { source?: string, ref?: string });
+const sourceOpts: Array<keyof (Omit<LayerSource, 'source-layer'> & { sourceLayer?: string })> = [
 	'metadata',
 	'ref',
 	'source',
@@ -38,7 +39,7 @@ export const Shared = defineComponent({
 			type: String as PropType<string>,
 			required: true,
 		},
-		source: [String, Object] as PropType<string | AnySourceData>,
+		source: [String, Object] as PropType<string | SourceSpecification>,
 		metadata: [Object, Array, String, Number] as PropType<any>,
 		ref: String as PropType<string>,
 		sourceLayer: String as PropType<string>,
@@ -65,7 +66,7 @@ export const Shared = defineComponent({
 	],
 });
 
-export function genLayerOpts<T extends Layer>(id: string, type: string, props: any, source: any): T {
+export function genLayerOpts<T extends LayerSource>(id: string, type: string, props: any, source: any): T {
 	return Object.keys(props)
 		.filter((opt) => (props as any)[opt] !== undefined && sourceOpts.indexOf(opt as any) !== -1)
 		.reduce(

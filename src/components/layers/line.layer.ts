@@ -1,8 +1,12 @@
-import { LineLayer, LineLayout, LinePaint } from 'maplibre-gl';
+import { LineLayerSpecification } from 'maplibre-gl';
 import { genLayerOpts, handleDispose, registerLayerEvents, Shared } from '@/components/layers/shared';
 import { createCommentVNode, defineComponent, getCurrentInstance, inject, PropType, warn, watch } from 'vue';
 import { componentIdSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
 import { getSourceRef } from '@/components/sources/shared';
+
+export declare type LineLayout = Pick<LineLayerSpecification, "layout">
+export declare type LinePaint = Pick<LineLayerSpecification, "paint">
+
 
 export default defineComponent({
 	name: 'MglLineLayer',
@@ -30,7 +34,7 @@ export default defineComponent({
 			[isLoaded, sourceRef],
 			([il, src]) => {
 				if (il && (src || src === undefined)) {
-					map.value.addLayer(genLayerOpts<LineLayer>(props.layerId, 'line', props, sourceId), props.before || undefined);
+					map.value.addLayer(genLayerOpts<LineLayerSpecification>(props.layerId, 'line', props, sourceId), props.before || undefined);
 					registerLayerEvents(map.value, props.layerId, ci.vnode);
 				}
 			},
