@@ -24,6 +24,6 @@ export function usePositionWatcher(source: WatchSource<Position | undefined>, ma
 			}
 			map.value.addControl(control, v);
 		},
-		{ immediate: true },
+		{ immediate: true }
 	);
 }

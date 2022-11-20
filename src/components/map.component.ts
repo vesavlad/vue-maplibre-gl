@@ -139,7 +139,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setBearing(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.bounds,
@@ -147,7 +147,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.fitBounds(v, props.fitBoundsOptions);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.center,
@@ -155,7 +155,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setCenter(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.maxBounds,
@@ -163,7 +163,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setMaxBounds(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.maxPitch,
@@ -171,7 +171,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setMaxPitch(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.maxZoom,
@@ -179,7 +179,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setMaxZoom(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.minPitch,
@@ -187,7 +187,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setMinPitch(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.minZoom,
@@ -195,7 +195,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setMinZoom(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.pitch,
@@ -203,7 +203,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setPitch(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.renderWorldCopies,
@@ -211,7 +211,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setRenderWorldCopies(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.mapStyle,
@@ -219,7 +219,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setStyle(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.transformRequest,
@@ -227,7 +227,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setTransformRequest(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.zoom,
@@ -235,7 +235,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setZoom(v);
 				}
-			},
+			}
 		);
 		watch(
 			() => props.zoom,
@@ -243,7 +243,7 @@ export default defineComponent({
 				if (v) {
 					map.value?.setZoom(v);
 				}
-			},
+			}
 		);
 
 		/*
@@ -260,7 +260,7 @@ export default defineComponent({
 						(obj as any)[opt === 'mapStyle' ? 'style' : opt] = unref((props as any)[opt]);
 						return obj;
 					},
-					{ container: container.value as HTMLDivElement } as MapboxOptions,
+					{ container: container.value as HTMLDivElement } as MapboxOptions
 				);
 
 			// init map
@@ -323,7 +323,7 @@ export default defineComponent({
 				class: 'mgl-container',
 				style: { height: this.$props.height, width: this.$props.width },
 			},
-			[h('div', { ref: 'container', class: 'mgl-wrapper' }), this.isInitialized && this.$slots.default ? this.$slots.default() : undefined],
+			[h('div', { ref: 'container', class: 'mgl-wrapper' }), this.isInitialized && this.$slots.default ? this.$slots.default() : undefined]
 		);
 	},
 });

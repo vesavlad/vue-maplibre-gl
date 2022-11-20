@@ -34,20 +34,20 @@ export default defineComponent({
 
 		watch(
 			() => props.coordinates,
-			(v) => marker.setLngLat(v),
+			(v) => marker.setLngLat(v)
 		);
 		// watch(() => props.draggable, v => marker.setDraggable(v || false));
 		watch(
 			() => props.offset,
-			(v) => marker.setOffset(v || [0, 0]),
+			(v) => marker.setOffset(v || [0, 0])
 		);
 		watch(
 			() => props.pitchAlignment,
-			(v) => marker.setPitchAlignment(v || 'auto'),
+			(v) => marker.setPitchAlignment(v || 'auto')
 		);
 		watch(
 			() => props.rotationAlignment,
-			(v) => marker.setRotationAlignment(v || 'auto'),
+			(v) => marker.setRotationAlignment(v || 'auto')
 		);
 
 		onBeforeUnmount(marker.remove.bind(marker));

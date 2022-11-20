@@ -57,7 +57,7 @@ export default defineComponent({
 			(v) => {
 				if (v) setStyleByMap();
 			},
-			{ immediate: true },
+			{ immediate: true }
 		);
 		map.value.on('style.load', setStyleByMap);
 		document.addEventListener('click', closer);
@@ -69,7 +69,7 @@ export default defineComponent({
 				() => props.modelValue,
 				(v) => {
 					if (v !== undefined) modelValue.value = v;
-				},
+				}
 			);
 		}
 		if (props.isOpen !== undefined) {
@@ -77,7 +77,7 @@ export default defineComponent({
 				() => props.isOpen,
 				(v) => {
 					if (v !== undefined) isOpen.value = v;
-				},
+				}
 			);
 		}
 
@@ -176,7 +176,7 @@ export default defineComponent({
 											class: this.intModelValue?.name === s.name ? 'is-active' : '',
 											onClick: () => this.setStyle(s),
 										},
-										createTextVNode(s.label),
+										createTextVNode(s.label)
 								  )
 								: h(
 										'button',
@@ -185,12 +185,12 @@ export default defineComponent({
 											class: this.intModelValue?.name === s.name ? 'is-active' : '',
 											onClick: () => this.setStyle(s),
 										},
-										createTextVNode(s.label),
+										createTextVNode(s.label)
 								  );
-						}),
+						})
 					),
 				]),
-			]),
+			])
 		);
 	},
 });

@@ -60,7 +60,7 @@ export default defineComponent({
 		usePositionWatcher(() => props.position, map, control);
 		watch(
 			() => props.noClasses,
-			(v) => control.setClasses(v),
+			(v) => control.setClasses(v)
 		);
 		onBeforeUnmount(() => {
 			map.value.removeControl(control);

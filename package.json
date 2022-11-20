@@ -1,5 +1,5 @@
 {
-	"name": "@vesa/vue-maplibre-gl",
+	"name": "@vladvesa/vue-maplibre-gl",
 	"version": "1.0.0",
 	"description": "Vue 3 plugin for maplibre-gl",
 	"keywords": [
@@ -15,14 +15,10 @@
 		"map",
 		"maptiler"
 	],
-	"author": {
-		"name": "Volker Nauruhn",
-		"email": "mensch.meier@live.de",
-		"url": "razorness.de"
-	},
+	"author": "Volker Nauruhn <mensch.meier@live.de> (razorness.de)",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/vesavlad/vue-maplibre-gl.git"
+		"url": "git+https://github.com/vesavlad/vue-maplibre-gl.git"
 	},
 	"license": "MIT",
 	"packageManager": "yarn@3.3.0",
@@ -68,5 +64,9 @@
 		"singleQuote": true,
 		"endOfLine": "lf",
 		"useTabs": true
-	}
+	},
+	"bugs": {
+		"url": "https://github.com/vesavlad/vue-maplibre-gl/issues"
+	},
+	"homepage": "https://github.com/vesavlad/vue-maplibre-gl#readme"
 }

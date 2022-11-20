@@ -55,7 +55,7 @@ export default defineComponent({
 		const defaults = ref(types[props.type] || types.default);
 		watch(
 			() => props.type,
-			(v) => (defaults.value = types[v] || types.default),
+			(v) => (defaults.value = types[v] || types.default)
 		);
 
 		return { defaults };
@@ -72,7 +72,7 @@ export default defineComponent({
 					height: this.size || this.defaults!.size,
 					viewBox: this.viewbox || this.defaults!.viewbox,
 				},
-				h('path', { fill: 'currentColor', d: this.path }),
+				h('path', { fill: 'currentColor', d: this.path })
 			),
 			this.$slots.default ? this.$slots.default() : undefined,
 		]);

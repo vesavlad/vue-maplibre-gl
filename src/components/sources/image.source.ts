@@ -30,7 +30,7 @@ export default defineComponent({
 		bindSource(map, source, isLoaded, emitter, props, 'image', sourceOpts, registry);
 		watch(
 			() => props.coordinates,
-			(v) => source.value?.setCoordinates(v || []),
+			(v) => source.value?.setCoordinates(v || [])
 		);
 
 		return { source };

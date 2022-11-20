@@ -117,7 +117,7 @@ export class MapLib {
 		component: InstanceType<typeof MglMap>,
 		map: Map,
 		ctx: { emit: (t: string, payload: any) => void },
-		eventName: string,
+		eventName: string
 	): MapEventHandler {
 		return (payload = {}) => ctx.emit(eventName, { type: payload.type, map, component, event: payload } as MglEvent);
 	}

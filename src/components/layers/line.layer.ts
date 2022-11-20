@@ -34,7 +34,7 @@ export default defineComponent({
 					registerLayerEvents(map.value, props.layerId, ci.vnode);
 				}
 			},
-			{ immediate: true },
+			{ immediate: true }
 		);
 
 		handleDispose(isLoaded, map, ci, props, registry);

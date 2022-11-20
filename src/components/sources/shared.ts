@@ -12,7 +12,7 @@ export function genSourceOpts<T extends object, O extends object>(type: string, 
 				(obj as any)[opt] = unref((props as any)[opt]);
 				return obj;
 			},
-			{ type } as T,
+			{ type } as T
 		);
 }
 
@@ -37,7 +37,7 @@ export function bindSource<T extends object, O extends object>(
 	props: any,
 	type: string,
 	sourceOpts: Array<keyof O>,
-	registry: SourceLayerRegistry,
+	registry: SourceLayerRegistry
 ) {
 	function addSource() {
 		if (isLoaded.value) {

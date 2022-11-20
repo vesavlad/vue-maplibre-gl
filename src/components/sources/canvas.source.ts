@@ -31,7 +31,7 @@ export default defineComponent({
 		bindSource(map, source, isLoaded, emitter, props, 'canvas', sourceOpts, registry);
 		watch(
 			() => props.coordinates,
-			(v) => source.value?.setCoordinates(v || []),
+			(v) => source.value?.setCoordinates(v || [])
 		);
 
 		return { source };

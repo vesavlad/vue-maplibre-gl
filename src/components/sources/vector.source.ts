@@ -36,11 +36,11 @@ export default defineComponent({
 		bindSource(map, source, isLoaded, emitter, props, 'vector', sourceOpts, registry);
 		watch(
 			() => props.tiles,
-			(v) => source.value?.setTiles(v || []),
+			(v) => source.value?.setTiles(v || [])
 		);
 		watch(
 			() => props.url,
-			(v) => source.value?.setUrl(v || ''),
+			(v) => source.value?.setUrl(v || '')
 		);
 
 		return { source };

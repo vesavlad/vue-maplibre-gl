@@ -25,7 +25,7 @@ export class FrameRateControl implements IControl {
 		private graphWidth = 90 * window.devicePixelRatio,
 		private graphTop = 0,
 		private graphRight = 5 * window.devicePixelRatio,
-		private width = 100 * window.devicePixelRatio,
+		private width = 100 * window.devicePixelRatio
 	) {}
 
 	getDefaultPosition(): Position {
@@ -126,7 +126,7 @@ export class FrameRateControl implements IControl {
 			this.graphRight,
 			this.graphTop,
 			this.graphWidth - rect,
-			this.graphHeight,
+			this.graphHeight
 		);
 		context.fillRect(this.graphRight + this.graphWidth - rect, this.graphTop, rect, this.graphHeight);
 		context.fillStyle = this.background;
@@ -192,7 +192,7 @@ export default defineComponent({
 				props.graphWidth,
 				props.graphTop,
 				props.graphRight,
-				props.width,
+				props.width
 			);
 		usePositionWatcher(() => props.position, map, control);
 		onBeforeUnmount(() => map.value.removeControl(control));

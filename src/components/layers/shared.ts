@@ -73,7 +73,7 @@ export function genLayerOpts<T extends Layer>(id: string, type: string, props: a
 				(obj as any)[opt === 'sourceLayer' ? 'source-layer' : opt] = unref((props as any)[opt]);
 				return obj;
 			},
-			{ type, source: props.source || source, id } as T,
+			{ type, source: props.source || source, id } as T
 		);
 }
 

@@ -32,7 +32,7 @@ export default defineComponent({
 					map.value.addLayer(genLayerOpts<BackgroundLayer>(props.layerId, 'background', props, sourceId), props.before || undefined);
 				}
 			},
-			{ immediate: true },
+			{ immediate: true }
 		);
 
 		function removeLayer() {
