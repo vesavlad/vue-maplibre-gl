@@ -25,3 +25,5 @@ yarn-error.log*
 /.yarn/unplugged
 /.yarn/install-state.gz
 /.pnp.*
+
+dist
