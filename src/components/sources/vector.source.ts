@@ -46,6 +46,6 @@ export default defineComponent({
 		return { source };
 	},
 	render() {
-		return createCommentVNode('Vector Source');
+		return [createCommentVNode('Vector Source'), this.source && this.$slots.default ? this.$slots.default() : undefined];
 	},
 });

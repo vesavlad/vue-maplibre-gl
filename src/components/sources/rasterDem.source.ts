@@ -1,6 +1,6 @@
 import { createCommentVNode, defineComponent, inject, PropType, provide } from 'vue';
 import { componentIdSymbol, emitterSymbol, isLoadedSymbol, mapSymbol, sourceIdSymbol, sourceLayerRegistry } from '@/components/types';
-import { RasterDEMSourceSpecification } from 'maplibre-gl';
+import { RasterDEMSourceSpecification, RasterDEMTileSource } from 'maplibre-gl';
 import { bindSource, getSourceRef } from '@/components/sources/shared';
 import { SourceLayerRegistry } from '@/components/sources/sourceLayer.registry';
 
@@ -27,7 +27,7 @@ export default defineComponent({
 			isLoaded = inject(isLoadedSymbol)!,
 			emitter = inject(emitterSymbol)!,
 			cid = inject(componentIdSymbol)!,
-			source = getSourceRef<RasterDEMSourceSpecification>(cid, props.sourceId),
+			source = getSourceRef<RasterDEMTileSource>(cid, props.sourceId),
 			registry = new SourceLayerRegistry();
 
 		provide(sourceIdSymbol, props.sourceId);
@@ -38,6 +38,6 @@ export default defineComponent({
 		return { source };
 	},
 	render() {
-		return createCommentVNode('Video Source');
+		return [createCommentVNode('Raster DEM Source'), this.source && this.$slots.default ? this.$slots.default() : undefined];
 	},
 });

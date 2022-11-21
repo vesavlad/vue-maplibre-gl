@@ -1,5 +1,13 @@
 import { defineComponent, getCurrentInstance, h, markRaw, onBeforeUnmount, onMounted, PropType, provide, ref, shallowRef, unref, watch } from 'vue';
-import { FitBoundsOptions, LngLatBoundsLike, LngLatLike, Map as MaplibreMap, MapOptions, Style, RequestTransformFunction } from 'maplibre-gl';
+import {
+	FitBoundsOptions,
+	LngLatBoundsLike,
+	LngLatLike,
+	Map as MaplibreMap,
+	MapOptions,
+	RequestTransformFunction,
+	StyleSpecification
+} from 'maplibre-gl';
 import { componentIdSymbol, emitterSymbol, isLoadedSymbol, mapSymbol, MglEvents, sourceIdSymbol } from '@/components/types';
 import { defaults } from '@/components/defaults';
 import { MapLib } from '@/components/map.lib';
@@ -52,14 +60,13 @@ export default defineComponent({
 		refreshExpiredTiles: { type: Boolean as PropType<boolean>, default: () => defaults.refreshExpiredTiles },
 		renderWorldCopies: { type: Boolean as PropType<boolean>, default: () => defaults.renderWorldCopies },
 		scrollZoom: { type: Boolean as PropType<boolean>, default: () => defaults.scrollZoom },
-		mapStyle: { type: [String, Object] as PropType<Style | string>, default: () => defaults.style },
+		mapStyle: { type: [String, Object] as PropType<StyleSpecification | string>, default: () => defaults.style },
 		trackResize: { type: Boolean as PropType<boolean>, default: () => defaults.trackResize },
 		transformRequest: { type: Function as PropType<RequestTransformFunction>, default: defaults.transformRequest },
 		touchZoomRotate: { type: Boolean as PropType<boolean>, default: () => defaults.touchZoomRotate },
 		touchPitch: { type: Boolean as PropType<boolean>, default: () => defaults.touchPitch },
 		zoom: { type: Number as PropType<number>, default: () => defaults.zoom },
 		maxTileCacheSize: { type: Number as PropType<number>, default: () => defaults.maxTileCacheSize },
-		accessToken: { type: String as PropType<string>, default: () => defaults.accessToken },
 		mapKey: { type: [String, Symbol] as PropType<string | symbol> },
 	},
 	// emits: [],
@@ -260,7 +267,7 @@ export default defineComponent({
 						(obj as any)[opt === 'mapStyle' ? 'style' : opt] = unref((props as any)[opt]);
 						return obj;
 					},
-					{ container: container.value as HTMLDivElement } as MapOptions
+					{ container: container.value as HTMLElement } as MapOptions
 				);
 
 			// init map

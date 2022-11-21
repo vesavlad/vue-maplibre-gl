@@ -3,7 +3,6 @@ import { Position, PositionValue, PositionValues, usePositionWatcher } from '@/c
 import { emitterSymbol, isLoadedSymbol, mapSymbol, StyleSwitchItem } from '@/components/types';
 import { CustomControl } from '@/components/controls/custom.control';
 import { ButtonType, default as MglButton } from '@/components/button.component';
-import { mdiLayersOutline } from '@mdi/js';
 
 function isEvent(e: any): e is Event {
 	return e && !!(e as Event).stopPropagation;
@@ -170,7 +169,7 @@ export default defineComponent({
 				renderSlot(this.$slots, 'button', slotProps, () => [
 					h(MglButton, {
 						type: ButtonType.MDI,
-						path: mdiLayersOutline,
+						path: "M12,18.54L19.37,12.8L21,14.07L12,21.07L3,14.07L4.62,12.81L12,18.54M12,16L3,9L12,2L21,9L12,16M12,4.53L6.26,9L12,13.47L17.74,9L12,4.53Z",
 						class: ['maplibregl-ctrl-icon maplibregl-style-switch', this.isOpen ? 'is-open' : ''],
 						onClick: this.toggleFn.bind(null, true),
 					}),
