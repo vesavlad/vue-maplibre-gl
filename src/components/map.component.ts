@@ -1,13 +1,5 @@
 import { defineComponent, getCurrentInstance, h, markRaw, onBeforeUnmount, onMounted, PropType, provide, ref, shallowRef, unref, watch } from 'vue';
-import {
-	FitBoundsOptions,
-	LngLatBoundsLike,
-	LngLatLike,
-	Map as MaplibreMap,
-	MapOptions,
-	RequestTransformFunction,
-	StyleSpecification
-} from 'maplibre-gl';
+import { FitBoundsOptions, LngLatBoundsLike, LngLatLike, Map as MaplibreMap, MapOptions, RequestTransformFunction, StyleSpecification } from 'maplibre-gl';
 import { componentIdSymbol, emitterSymbol, isLoadedSymbol, mapSymbol, MglEvents, sourceIdSymbol } from '@/components/types';
 import { defaults } from '@/components/defaults';
 import { MapLib } from '@/components/map.lib';

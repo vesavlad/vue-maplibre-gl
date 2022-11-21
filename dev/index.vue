@@ -1,12 +1,12 @@
 <template>
-	<div class='root'>
-		<label for='selector'>Select demo</label>
-		<select class='selector' v-model='option'>
+	<div class="root">
+		<label for="selector">Select demo</label>
+		<select class="selector" v-model="option">
 			<option>geojson</option>
 			<option>vector</option>
 		</select>
-		<vector-sample v-if='option === "vector"'></vector-sample>
-		<geojson-sample v-if='option === "geojson"'></geojson-sample>
+		<vector-sample v-if="option === 'vector'"></vector-sample>
+		<geojson-sample v-if="option === 'geojson'"></geojson-sample>
 	</div>
 </template>
 
@@ -20,15 +20,14 @@ export default {
 	setup() {
 		const option = ref('vector');
 		return {
-			option
-		}
-	}
+			option,
+		};
+	},
 };
 </script>
 
 <style scoped>
 .root {
-
 }
 .selector {
 	height: 30px;

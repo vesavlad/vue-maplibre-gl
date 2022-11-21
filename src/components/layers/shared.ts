@@ -1,19 +1,31 @@
 import { defineComponent, onBeforeUnmount, PropType, Ref, unref, VNode } from 'vue';
 import {
 	BackgroundLayerSpecification,
-	CircleLayerSpecification, FillExtrusionLayerSpecification,
-	FillLayerSpecification, HeatmapLayerSpecification, HillshadeLayerSpecification,
+	CircleLayerSpecification,
+	FillExtrusionLayerSpecification,
+	FillLayerSpecification,
+	HeatmapLayerSpecification,
+	HillshadeLayerSpecification,
 	LayerSpecification,
 	LineLayerSpecification,
 	Map,
-	MapLayerEventType, RasterLayerSpecification,
+	MapLayerEventType,
+	RasterLayerSpecification,
 	SourceSpecification,
-	SymbolLayerSpecification
+	SymbolLayerSpecification,
 } from 'maplibre-gl';
 import { ComponentInternalInstance } from '@vue/runtime-core';
 import { SourceLayerRegistry } from '@/components/sources/sourceLayer.registry';
 
-declare type SourcePossibleOptions = (FillLayerSpecification & LineLayerSpecification & SymbolLayerSpecification & CircleLayerSpecification & HeatmapLayerSpecification & FillExtrusionLayerSpecification & RasterLayerSpecification & HillshadeLayerSpecification & BackgroundLayerSpecification) & { source?: string; ref?: string };
+declare type SourcePossibleOptions = (FillLayerSpecification &
+	LineLayerSpecification &
+	SymbolLayerSpecification &
+	CircleLayerSpecification &
+	HeatmapLayerSpecification &
+	FillExtrusionLayerSpecification &
+	RasterLayerSpecification &
+	HillshadeLayerSpecification &
+	BackgroundLayerSpecification) & { source?: string; ref?: string };
 const sourceOpts: Array<keyof (Omit<SourcePossibleOptions, 'source-layer'> & { sourceLayer?: string })> = [
 	'metadata',
 	'ref',
