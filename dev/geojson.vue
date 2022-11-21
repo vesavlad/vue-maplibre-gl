@@ -28,10 +28,6 @@
 				<mgl-geo-json-source source-id="geojson" :data="geoJsonSource.data">
 					<mgl-line-layer layer-id="geojson" :layout="geoJsonSource.layout" :paint="geoJsonSource.paint" @mouseenter="onMouseenter" />
 				</mgl-geo-json-source>
-
-				<mgl-vector-source source-id="xxx" :tiles="['https://api.opentransport.ro/map/v1/romania-stop-map/{z}/{x}/{y}.pbf']">
-					<mgl-symbol-layer layer-id="xxxx"> </mgl-symbol-layer>
-				</mgl-vector-source>
 			</mgl-map>
 		</div>
 		Loaded Count: {{ loaded }}<br />
@@ -71,16 +67,12 @@ import { MglDefaults, MglEvent, StyleSwitchItem, useMap } from '@/entry';
 import { mdiCursorDefaultClick } from '@mdi/js';
 import { LineLayoutProps, LinePaintProps, MapLayerMouseEvent } from 'maplibre-gl';
 import { defineComponent, ref, toRef, watch } from 'vue';
-import MglVectorSource from '@/components/sources/vector.source';
-import MglSymbolLayer from '@/components/layers/smybol.layer';
 import { LineLayout, LinePaint } from '@/components/layers/line.layer';
 
 MglDefaults.style = 'https://api.maptiler.com/maps/streets/style.json?key=cQX2iET1gmOW38bedbUh';
-console.log('MglDefaults', MglDefaults);
 
 export default defineComponent({
-	name: 'ServeDev',
-	components: { MglSymbolLayer, MglVectorSource },
+	name: 'geojson-sample',
 	setup() {
 		const map = useMap(),
 			showCustomControl = ref(true);
