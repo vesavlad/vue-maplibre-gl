@@ -59,7 +59,6 @@ export default defineComponent({
 		touchPitch: { type: Boolean as PropType<boolean>, default: () => defaults.touchPitch },
 		zoom: { type: Number as PropType<number>, default: () => defaults.zoom },
 		maxTileCacheSize: { type: Number as PropType<number>, default: () => defaults.maxTileCacheSize },
-		accessToken: { type: String as PropType<string>, default: () => defaults.accessToken },
 		mapKey: { type: [String, Symbol] as PropType<string | symbol> },
 	},
 	// emits: [],

@@ -1,10 +1,20 @@
 import { defineComponent, onBeforeUnmount, PropType, Ref, unref, VNode } from 'vue';
-import { LayerSpecification, Map, MapLayerEventType, SourceSpecification } from 'maplibre-gl';
+import {
+	BackgroundLayerSpecification,
+	CircleLayerSpecification, FillExtrusionLayerSpecification,
+	FillLayerSpecification, HeatmapLayerSpecification, HillshadeLayerSpecification,
+	LayerSpecification,
+	LineLayerSpecification,
+	Map,
+	MapLayerEventType, RasterLayerSpecification,
+	SourceSpecification,
+	SymbolLayerSpecification
+} from 'maplibre-gl';
 import { ComponentInternalInstance } from '@vue/runtime-core';
 import { SourceLayerRegistry } from '@/components/sources/sourceLayer.registry';
 
-declare type LayerSource = LayerSpecification & { source?: string; ref?: string };
-const sourceOpts: Array<keyof (Omit<LayerSource, 'source-layer'> & { sourceLayer?: string })> = [
+declare type SourcePossibleOptions = (FillLayerSpecification & LineLayerSpecification & SymbolLayerSpecification & CircleLayerSpecification & HeatmapLayerSpecification & FillExtrusionLayerSpecification & RasterLayerSpecification & HillshadeLayerSpecification & BackgroundLayerSpecification) & { source?: string; ref?: string };
+const sourceOpts: Array<keyof (Omit<SourcePossibleOptions, 'source-layer'> & { sourceLayer?: string })> = [
 	'metadata',
 	'ref',
 	'source',
@@ -66,7 +76,7 @@ export const Shared = defineComponent({
 	],
 });
 
-export function genLayerOpts<T extends LayerSource>(id: string, type: string, props: any, source: any): T {
+export function genLayerOpts<T extends LayerSpecification>(id: string, type: string, props: any, source: any): T {
 	return Object.keys(props)
 		.filter((opt) => (props as any)[opt] !== undefined && sourceOpts.indexOf(opt as any) !== -1)
 		.reduce(
