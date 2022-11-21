@@ -36,6 +36,6 @@ export default defineComponent({
 		return { source };
 	},
 	render() {
-		return createCommentVNode('Video Source');
+		return [createCommentVNode('Video Source'), this.source && this.$slots.default ? this.$slots.default() : undefined];
 	},
 });
