@@ -126,7 +126,13 @@ export default defineComponent({
 			}
 		}
 
-		const result: MglStyleSwitchControl = { added: isAdded, styleFn: setStyle, toggleFn: toggleOpen, isOpen: isOpen, modelValue: modelValue };
+		const result: MglStyleSwitchControl = {
+			added: isAdded,
+			styleFn: setStyle,
+			toggleFn: toggleOpen,
+			isOpen: isOpen,
+			modelValue: modelValue,
+		};
 		result.container = control.container;
 		result.modelValue = modelValue;
 

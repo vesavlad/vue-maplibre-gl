@@ -19,7 +19,11 @@ export default defineComponent({
 	},
 	setup(props) {
 		const map = inject(mapSymbol)!,
-			control = new NavigationControl({ showCompass: props.showCompass, showZoom: props.showZoom, visualizePitch: props.visualizePitch });
+			control = new NavigationControl({
+				showCompass: props.showCompass,
+				showZoom: props.showZoom,
+				visualizePitch: props.visualizePitch,
+			});
 		usePositionWatcher(() => props.position, map, control);
 		onBeforeUnmount(() => map.value.removeControl(control));
 	},

@@ -98,10 +98,26 @@ export default defineComponent({
 					// icon : { path: mdiRoad },
 					style: 'https://api.maptiler.com/maps/streets/style.json?key=cQX2iET1gmOW38bedbUh',
 				},
-				{ name: 'Basic', label: 'Basic', style: 'https://api.maptiler.com/maps/basic/style.json?key=cQX2iET1gmOW38bedbUh' },
-				{ name: 'Bright', label: 'Bright', style: 'https://api.maptiler.com/maps/bright/style.json?key=cQX2iET1gmOW38bedbUh' },
-				{ name: 'Satellite', label: 'Satellite', style: 'https://api.maptiler.com/maps/hybrid/style.json?key=cQX2iET1gmOW38bedbUh' },
-				{ name: 'Voyager', label: 'Voyager', style: 'https://api.maptiler.com/maps/voyager/style.json?key=cQX2iET1gmOW38bedbUh' },
+				{
+					name: 'Basic',
+					label: 'Basic',
+					style: 'https://api.maptiler.com/maps/basic/style.json?key=cQX2iET1gmOW38bedbUh',
+				},
+				{
+					name: 'Bright',
+					label: 'Bright',
+					style: 'https://api.maptiler.com/maps/bright/style.json?key=cQX2iET1gmOW38bedbUh',
+				},
+				{
+					name: 'Satellite',
+					label: 'Satellite',
+					style: 'https://api.maptiler.com/maps/hybrid/style.json?key=cQX2iET1gmOW38bedbUh',
+				},
+				{
+					name: 'Voyager',
+					label: 'Voyager',
+					style: 'https://api.maptiler.com/maps/voyager/style.json?key=cQX2iET1gmOW38bedbUh',
+				},
 			] as StyleSwitchItem[],
 			bikeLayout: {
 				'icon-size': 0.125,
