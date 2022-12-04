@@ -16,15 +16,15 @@ export function genSourceOpts<T extends object, O extends object>(type: string, 
 		);
 }
 
-const refs = new Map<string, Ref<Source | undefined | null>>();
+const sourcesRefs = new Map<string, Ref<Source | undefined | null>>();
 
 export function getSourceRef<T = Source>(mcid: number, source: any): Ref<T | undefined | null> {
-	const isString = typeof source === 'string',
-		key = String(mcid) + (isString ? source : '');
-	let r = refs.get(key);
+	const isString = typeof source === 'string';
+	const key = String(mcid) + (isString ? source : '');
+	let r = sourcesRefs.get(key);
 	if (!r) {
 		r = ref(isString ? null : undefined);
-		refs.set(key, r);
+		sourcesRefs.set(key, r);
 	}
 	return r as Ref<T | undefined | null>;
 }
