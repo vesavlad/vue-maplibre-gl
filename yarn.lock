@@ -363,7 +363,6 @@ __metadata:
   resolution: "@vladvesa/vue-maplibre-gl@workspace:."
   dependencies:
     "@vitejs/plugin-vue": ^3.2.0
-    "@vue/compiler-sfc": ^3.2.45
     maplibre-gl: ^2.4.0
     mitt: ^3.0.0
     prettier: ^2.7.1
@@ -400,7 +399,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/compiler-sfc@npm:3.2.45, @vue/compiler-sfc@npm:^3.2.45":
+"@vue/compiler-sfc@npm:3.2.45":
   version: 3.2.45
   resolution: "@vue/compiler-sfc@npm:3.2.45"
   dependencies:
