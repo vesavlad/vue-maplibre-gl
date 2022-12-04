@@ -15,7 +15,17 @@
 		"map",
 		"maptiler"
 	],
-	"author": "Volker Nauruhn <mensch.meier@live.de> (razorness.de)",
+	"author": {
+		"name": "Vlad Vesa",
+		"email": "vlad.vesa@outlook.com"
+	},
+	"contributors": [
+		{
+			"name": "Volker Nauruhn",
+			"email": "mensch.meier@live.de",
+			"url": "https://razorness.de"
+		}
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/vesavlad/vue-maplibre-gl.git"
