@@ -58,11 +58,6 @@
 	"engines": {
 		"node": ">=16"
 	},
-	"prettier": {
-		"singleQuote": true,
-		"endOfLine": "lf",
-		"useTabs": true
-	},
 	"bugs": {
 		"url": "https://github.com/vesavlad/vue-maplibre-gl/issues"
 	},
