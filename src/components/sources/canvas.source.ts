@@ -15,7 +15,7 @@ export default defineComponent({
 		},
 		coordinates: Object as PropType<Coordinates>,
 		animate: Boolean as PropType<boolean>,
-		canvas: [HTMLCanvasElement, String] as PropType<HTMLCanvasElement | string>,
+		canvas: [Object, String] as PropType<HTMLCanvasElement | string>,
 	},
 	setup(props) {
 		const map = inject(mapSymbol)!,

@@ -14,13 +14,13 @@ export default defineComponent({
 			},
 		},
 		container: {
-			type: HTMLElement as PropType<HTMLElement>,
+			type: Object as PropType<HTMLElement>,
 			default: null,
 		},
 	},
 	setup(props) {
 		const map = inject(mapSymbol)!,
-			control = new FullscreenControl(props.container ? { container: props.container } : { container: undefined });
+			control = new FullscreenControl(props.container ? { container: props.container as HTMLElement } : { container: undefined });
 		usePositionWatcher(() => props.position, map, control);
 		onBeforeUnmount(() => map.value.removeControl(control));
 	},
